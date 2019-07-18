@@ -1,0 +1,1842 @@
+{
+  "curt": {
+    "Identifier": 1,
+    "word": "curt",
+    "date_added": "2018-03-27T00:00:00",
+    "date_published": "2018-03-27T00:00:00",
+    "definition": "rudely brief",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "He is a curt asshole"
+  },
+  "facile": {
+    "Identifier": 2,
+    "word": "facile",
+    "date_added": "2018-03-29T00:00:00",
+    "date_published": "2018-03-29T00:00:00",
+    "definition": "(especially of a theory) appearing neat and comprehensive only by ignoring the true complexities of an issue",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The solution presented proved to be facile on further investigation of the facts."
+  },
+  "lugubrious": {
+    "Identifier": 3,
+    "word": "lugubrious",
+    "date_added": "2018-01-22T00:00:00",
+    "date_published": "2018-01-22T00:00:00",
+    "definition": "looking or sounding sad and dismal",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Mondays always start with me looking lugubrious."
+  },
+  "rake": {
+    "Identifier": 4,
+    "word": "rake",
+    "date_added": "2018-01-12T00:00:00",
+    "date_published": "2018-01-12T00:00:00",
+    "definition": "a man habituated to immoral conduct",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I was scandalized to discover my own father was such a rake."
+  },
+  "victual": {
+    "Identifier": 5,
+    "word": "victual",
+    "date_added": "2018-01-09T00:00:00",
+    "date_published": "2018-01-09T00:00:00",
+    "definition": "food or provisions, typically as prepared for consumption",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I am most excited for the victuals, but hearing about AWS will be cool too."
+  },
+  "trammel": {
+    "Identifier": 6,
+    "word": "trammel",
+    "date_added": "2018-01-19T00:00:00",
+    "date_published": "2018-01-19T00:00:00",
+    "definition": "a restriction or impediment to someone's freedom of action.",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "We are trying to use jira to ease reporting, not to trammel the development process."
+  },
+  "lackadaisical": {
+    "Identifier": 7,
+    "word": "lackadaisical",
+    "date_added": "2018-04-02T00:00:00",
+    "date_published": "2018-04-02T00:00:00",
+    "definition": "lacking enthusiasm and determination, carelessly lazy",
+    "ipa": "laekedeizikul",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Our fearless leader was pretty lackadaisical this morning."
+  },
+  "obdurate": {
+    "Identifier": 8,
+    "word": "obdurate",
+    "date_added": "2017-11-02T00:00:00",
+    "date_published": "2017-11-02T00:00:00",
+    "definition": "stubbornly refusing to change one's opinion or course of action",
+    "ipa": "abdurut",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Let's not be obdurate kids, eat your veggies."
+  },
+  "cad": {
+    "Identifier": 9,
+    "word": "cad",
+    "date_added": "2017-11-03T00:00:00",
+    "date_published": "2017-11-03T00:00:00",
+    "definition": "a man who behaves dishonorably, especially toward a woman",
+    "ipa": "kad",
+    "partOfSpeech": "noun",
+    "exampleSentence": "You sir, are a bounder and a cad"
+  },
+  "mercurial": {
+    "Identifier": 10,
+    "word": "mercurial",
+    "date_added": "2017-11-06T00:00:00",
+    "date_published": "2017-11-06T00:00:00",
+    "definition": "having a volitile or lively character; quick-witted, changeable, animated",
+    "ipa": "mekjuriul",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The candidate seemed mercurial, so I'm giving him a 'soft yes'."
+  },
+  "temerity": {
+    "Identifier": 11,
+    "word": "temerity",
+    "date_added": "2017-11-07T00:00:00",
+    "date_published": "2017-11-07T00:00:00",
+    "definition": "excessive confidence or boldness",
+    "ipa": "tumeriti",
+    "partOfSpeech": "noun",
+    "exampleSentence": "He had the temerity to suggest that I had no idea what I was doing."
+  },
+  "quixotic": {
+    "Identifier": 12,
+    "word": "quixotic",
+    "date_added": "2017-11-08T00:00:00",
+    "date_published": "2017-11-08T00:00:00",
+    "definition": "exceedingly idealistic; unrealistic and impractical",
+    "ipa": "kwiksatik",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "This plan to upgrade to Investran 7 this year seems a bit quixotic."
+  },
+  "byzantine": {
+    "Identifier": 13,
+    "word": "byzantine",
+    "date_added": "2018-04-03T00:00:00",
+    "date_published": "2018-04-03T00:00:00",
+    "definition": "(of a system or situation) excessively complicated, typically involving a great deal of administrative detail.",
+    "ipa": "bizentine",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Project management tools are necessary, but they become more harmful than helpful if the implementation becomes too byzantine."
+  },
+  "pedant": {
+    "Identifier": 14,
+    "word": "pedant",
+    "date_added": "2017-11-10T00:00:00",
+    "date_published": "2017-11-10T00:00:00",
+    "definition": "a person who is excessively concerned iwth minor details and rules or with displaying academic learning",
+    "ipa": "pedunt",
+    "partOfSpeech": "noun",
+    "exampleSentence": "Who invited this pedant to my design review?"
+  },
+  "multitudinous": {
+    "Identifier": 15,
+    "word": "multitudinous",
+    "date_added": "2017-11-15T00:00:00",
+    "date_published": "2017-11-15T00:00:00",
+    "definition": "very numerous",
+    "ipa": "multitudinous",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "No, this my hand will rather the multitudinous seas incarnadine, making the green one red."
+  },
+  "extrude": {
+    "Identifier": 16,
+    "word": "extrude",
+    "date_added": "2017-11-13T00:00:00",
+    "date_published": "2017-11-13T00:00:00",
+    "definition": "thrust or force out",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Watching the machine extrude the newly ground beef is kind of revolting."
+  },
+  "perfunctory": {
+    "Identifier": 17,
+    "word": "perfunctory",
+    "date_added": "2017-11-14T00:00:00",
+    "date_published": "2017-11-14T00:00:00",
+    "definition": "(of an action or gesture) carried out with a minimum of effort or reflection",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "His perfunctory reply made it clear he had not been listening."
+  },
+  "prevaricate": {
+    "Identifier": 18,
+    "word": "prevaricate",
+    "date_added": "2017-11-09T00:00:00",
+    "date_published": "2017-11-09T00:00:00",
+    "definition": "to speak or act in an evasive way",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "He began to prevaricate when questioned about his nighttime activities."
+  },
+  "absentia": {
+    "Identifier": 19,
+    "word": "absentia",
+    "date_added": "2018-03-16T00:00:00",
+    "date_published": "2018-03-16T00:00:00",
+    "definition": "absense",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I fully expect to be insulted in absentia."
+  },
+  "epicurean": {
+    "Identifier": 20,
+    "word": "epicurean",
+    "date_added": "2018-04-04T00:00:00",
+    "date_published": "2018-04-04T00:00:00",
+    "definition": "pursuing pleasure, especially in reference to food or comfort; hedonistic",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "My puritanical father once tried to tell me that buying a winter quote would have qualified as epicurian."
+  },
+  "luxuriate": {
+    "Identifier": 21,
+    "word": "luxuriate",
+    "date_added": "2017-11-22T00:00:00",
+    "date_published": "2017-11-22T00:00:00",
+    "definition": "enjoy oneself in a luxuroius way; take self-indulgent delight",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "I plan to luxuriate on the farm, sipping Dom P and trying on my cousins' bling."
+  },
+  "defenestrate": {
+    "Identifier": 22,
+    "word": "defenestrate",
+    "date_added": "2017-11-21T00:00:00",
+    "date_published": "2017-11-21T00:00:00",
+    "definition": "to throw (someone) out a window",
+    "ipa": null,
+    "partOfSpeech": "to throw (someone) out a window",
+    "exampleSentence": "The pressure is getting to be too much for this word-of-the-day thing, so I'm going to start defenestrating some passers-by to relieve pressure."
+  },
+  "churlish": {
+    "Identifier": 23,
+    "word": "churlish",
+    "date_added": "2017-11-20T00:00:00",
+    "date_published": "2017-11-20T00:00:00",
+    "definition": "rude in a mean-spirited and surly way",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "\"The churlish glutton did not bring food to Fitzgiving, but still ate all the potatoes."
+  },
+  "nebulous": {
+    "Identifier": 24,
+    "word": "nebulous",
+    "date_added": "2017-11-17T00:00:00",
+    "date_published": "2017-11-17T00:00:00",
+    "definition": "unclear, vague, or ill-defined",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "After talking for twenty minutes, the purpose o fthe meeting was still nebulous."
+  },
+  "skulduggery": {
+    "Identifier": 25,
+    "word": "skulduggery",
+    "date_added": "2017-11-16T00:00:00",
+    "date_published": "2017-11-16T00:00:00",
+    "definition": "underhanded or unscrupulous behavior; trickery",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "He was put on trial for the various acts of skulduggery he had committed over the years."
+  },
+  "upshot": {
+    "Identifier": 26,
+    "word": "upshot",
+    "date_added": "2018-04-06T00:00:00",
+    "date_published": "2018-04-06T00:00:00",
+    "definition": "the final or eventual outcome or conclusion of a discussion, action, or series of events",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "The upshot is that no one has a vendor managmenet solution."
+  },
+  "pernicious": {
+    "Identifier": 27,
+    "word": "pernicious",
+    "date_added": "2017-12-08T00:00:00",
+    "date_published": "2017-12-08T00:00:00",
+    "definition": "having a harmful effect, especially in a gradual or subtle way",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Call me maybe was voted 'Most Pernicious Song' of 2012."
+  },
+  "sus": {
+    "Identifier": 28,
+    "word": "sus",
+    "date_added": "2017-12-07T00:00:00",
+    "date_published": "2017-12-07T00:00:00",
+    "definition": "shady, suspicious",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "\"Did you notice that copying down the bank accounts over there??\" \"Yeah fam, mad sus.\""
+  },
+  "cuckold": {
+    "Identifier": 29,
+    "word": "cuckold",
+    "date_added": "2017-12-06T00:00:00",
+    "date_published": "2017-12-06T00:00:00",
+    "definition": "the husband of an adultress, often regarded as an object of derision",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Not having the best week since my best friend made me into a cuckold."
+  },
+  "strumpet": {
+    "Identifier": 30,
+    "word": "strumpet",
+    "date_added": "2017-12-05T00:00:00",
+    "date_published": "2017-12-05T00:00:00",
+    "definition": "a female prostitute or a promiscuous woman",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Fie on you, you wicked strumpet!"
+  },
+  "vapid": {
+    "Identifier": 31,
+    "word": "vapid",
+    "date_added": "2017-12-04T00:00:00",
+    "date_published": "2017-12-04T00:00:00",
+    "definition": "offering nothing that is stimulating or challenging",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I couldn't concentrate on the train due to the vapid conversation in the row behind me."
+  },
+  "loquacious": {
+    "Identifier": 32,
+    "word": "loquacious",
+    "date_added": "2017-12-01T00:00:00",
+    "date_published": "2017-12-01T00:00:00",
+    "definition": "tending to talk a great deal",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The meeting ran over due to the loquacious business analyst."
+  },
+  "indefatigable": {
+    "Identifier": 33,
+    "word": "indefatigable",
+    "date_added": "2017-11-30T00:00:00",
+    "date_published": "2017-11-30T00:00:00",
+    "definition": "(of a person or their efforts) persisting tirelessly",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "When it came to berating his employees, the manager was indefatigable."
+  },
+  "similitude": {
+    "Identifier": 34,
+    "word": "similitude",
+    "date_added": "2017-11-29T00:00:00",
+    "date_published": "2017-11-29T00:00:00",
+    "definition": "the quality or state of being similar to something",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "That train does show some similitude to the Hogwarts Express."
+  },
+  "vendor": {
+    "Identifier": 35,
+    "word": "vendor",
+    "date_added": "2017-11-28T00:00:00",
+    "date_published": "2017-11-28T00:00:00",
+    "definition": "a person or organization that sells something",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Heh heh heh...vendors!"
+  },
+  "lollygag": {
+    "Identifier": 36,
+    "word": "lollygag",
+    "date_added": "2017-11-27T00:00:00",
+    "date_published": "2017-11-27T00:00:00",
+    "definition": "spend time aimlessly; idle",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "While you suckers are at work, I'm lollygagging in Indiana."
+  },
+  "panacea": {
+    "Identifier": 37,
+    "word": "panacea",
+    "date_added": "2018-04-05T00:00:00",
+    "date_published": "2018-04-05T00:00:00",
+    "definition": "a solution or remedy for all difficulties or diseases",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Anaplan is not a panacea."
+  },
+  "buffoonery": {
+    "Identifier": 38,
+    "word": "buffoonery",
+    "date_added": "2018-04-10T00:00:00",
+    "date_published": "2018-04-10T00:00:00",
+    "definition": "behavior that is ridiculous but amusing",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Bullet wounds will stop your buffoonery."
+  },
+  "perambulate": {
+    "Identifier": 39,
+    "word": "perambulate",
+    "date_added": "2018-01-11T00:00:00",
+    "date_published": "2018-01-11T00:00:00",
+    "definition": "to walk or travel, especially for pleasure or in a leisurely way",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Perambulating in a gorilla costume is much more enjoyable than in a suit."
+  },
+  "clandestine": {
+    "Identifier": 40,
+    "word": "clandestine",
+    "date_added": "2018-01-10T00:00:00",
+    "date_published": "2018-01-10T00:00:00",
+    "definition": "kept secret or done secretly, especially because illicit",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I need to get more subtle in my clandestine use of Prava's sharpie."
+  },
+  "fie": {
+    "Identifier": 41,
+    "word": "fie",
+    "date_added": "2018-01-08T00:00:00",
+    "date_published": "2018-01-08T00:00:00",
+    "definition": "used to express disgust or outrage",
+    "ipa": null,
+    "partOfSpeech": "exclamation",
+    "exampleSentence": "\"Fie on congress!\" -Robert C Byrd"
+  },
+  "fractious": {
+    "Identifier": 42,
+    "word": "fractious",
+    "date_added": "2018-01-05T00:00:00",
+    "date_published": "2018-01-05T00:00:00",
+    "definition": "irritable and quarrelsome; difficult to control, unruly",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Being that American culture is individual-centered, offices here are often fractious."
+  },
+  "ameliorate": {
+    "Identifier": 43,
+    "word": "ameliorate",
+    "date_added": "2018-01-03T00:00:00",
+    "date_published": "2018-01-03T00:00:00",
+    "definition": "make (something bad or unsatisfactory) better",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Hopefully the new deoderant will ameliorate my roommate's odor issues."
+  },
+  "indolence": {
+    "Identifier": 44,
+    "word": "indolence",
+    "date_added": "2018-01-02T00:00:00",
+    "date_published": "2018-01-02T00:00:00",
+    "definition": "avoidance of activity or exertion; laziness",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I spent my vacation in indolence."
+  },
+  "desiccate": {
+    "Identifier": 45,
+    "word": "desiccate",
+    "date_added": "2017-12-28T00:00:00",
+    "date_published": "2017-12-28T00:00:00",
+    "definition": "to remove the moisture from",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "He came back from vacation looking like an older, desiccated Boris Karloff."
+  },
+  "bacchanal": {
+    "Identifier": 46,
+    "word": "bacchanal",
+    "date_added": "2017-12-19T00:00:00",
+    "date_published": "2017-12-19T00:00:00",
+    "definition": "an occasion of wild and drunken revelry",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I heard a good time was had by all at the Workday team bacchanal."
+  },
+  "sophist": {
+    "Identifier": 47,
+    "word": "sophist",
+    "date_added": "2017-12-18T00:00:00",
+    "date_published": "2017-12-18T00:00:00",
+    "definition": "a captious or fallacious reasoner; (capitalized) Greek philosophers noted for arguing any side of a debate for money",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I am a trained Sophist, so I always try to make the weaker argument into the stonger."
+  },
+  "solstice": {
+    "Identifier": 48,
+    "word": "solstice",
+    "date_added": "2017-12-15T00:00:00",
+    "date_published": "2017-12-15T00:00:00",
+    "definition": "either the longest (summer solstice) or shortest (winter solstice) day of the year in terms of sunlight.",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "The winter solstice is December 21st."
+  },
+  "punctual": {
+    "Identifier": 49,
+    "word": "punctual",
+    "date_added": "2017-12-14T00:00:00",
+    "date_published": "2017-12-14T00:00:00",
+    "definition": "happening or doing something at the agreed upon or proper time",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I am punctiliously punctual."
+  },
+  "lascivious": {
+    "Identifier": 50,
+    "word": "lascivious",
+    "date_added": "2017-12-13T00:00:00",
+    "date_published": "2017-12-13T00:00:00",
+    "definition": "(of a person) feeling or revealing an overt and often offensive sexual desire",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Bill asked us to refrain from any lascivious or otherwise uncouth behavior."
+  },
+  "rend": {
+    "Identifier": 51,
+    "word": "rend",
+    "date_added": "2017-12-12T00:00:00",
+    "date_published": "2017-12-12T00:00:00",
+    "definition": "to tear something into two or more pieces; (archaic) to wrench violently",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "He was so frustrated with the meeting that he rent the design document in two and stormed out."
+  },
+  "bushwhack": {
+    "Identifier": 52,
+    "word": "bushwhack",
+    "date_added": "2017-12-11T00:00:00",
+    "date_published": "2017-12-11T00:00:00",
+    "definition": "1. Live or travel in a wild or uncultivated country 2. fight as a guerrilla in the bush",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "I was surrounded by my family over the holidays and pelted with questions about my wedding, as if they were planning to bushwhack me."
+  },
+  "recumbent": {
+    "Identifier": 53,
+    "word": "recumbent",
+    "date_added": "2018-04-11T00:00:00",
+    "date_published": "2018-04-11T00:00:00",
+    "definition": "(especially of a person or human figure) lying down",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "You can do that over my cold, dead, recumbent body!"
+  },
+  "risible": {
+    "Identifier": 54,
+    "word": "risible",
+    "date_added": "2018-01-23T00:00:00",
+    "date_published": "2018-01-23T00:00:00",
+    "definition": "such as to provoke laughter",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The idea that we could go an entire Tuesday meeting without AV issues seems risible."
+  },
+  "acrimony": {
+    "Identifier": 55,
+    "word": "acrimony",
+    "date_added": "2018-01-18T00:00:00",
+    "date_published": "2018-01-18T00:00:00",
+    "definition": "bitterness or ill feeling",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Hopefully there will be no acrimony after today's grammar discussion"
+  },
+  "incommode": {
+    "Identifier": 56,
+    "word": "incommode",
+    "date_added": "2018-01-17T00:00:00",
+    "date_published": "2018-01-17T00:00:00",
+    "definition": "to inconvenience",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Poor time management in meetings is sure to incommode the next occupants of the meeting room."
+  },
+  "unctous": {
+    "Identifier": 57,
+    "word": "unctous",
+    "date_added": "2018-01-16T00:00:00",
+    "date_published": "2018-01-16T00:00:00",
+    "definition": "excessively or ingratiatingly flattering; oily",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The salesman was unctous to the extreme."
+  },
+  "rotund": {
+    "Identifier": 58,
+    "word": "rotund",
+    "date_added": "2018-01-30T00:00:00",
+    "date_published": "2018-01-30T00:00:00",
+    "definition": "1. (of a person) plump 2. (of speech or literary style) indulgingly grandiloquent expression",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Why is it that rotund speakers always deliver such rotund speeches? Are wan people always tired?"
+  },
+  "sanguine": {
+    "Identifier": 59,
+    "word": "sanguine",
+    "date_added": "2018-01-29T00:00:00",
+    "date_published": "2018-01-29T00:00:00",
+    "definition": "1. optimistic or positive, especially in an apparently bad or difficult situation 2. blood-red",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I am attempting to be more sanguine with my word choices this week."
+  },
+  "dissemble": {
+    "Identifier": 60,
+    "word": "dissemble",
+    "date_added": "2018-01-26T00:00:00",
+    "date_published": "2018-01-26T00:00:00",
+    "definition": "conceal one's true motives or beliefs",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Insurance salesman are known to dissemble."
+  },
+  "telology": {
+    "Identifier": 61,
+    "word": "telology",
+    "date_added": "2018-01-25T00:00:00",
+    "date_published": "2018-01-25T00:00:00",
+    "definition": "the study of evidences of design in nature; the use of design or purpose as an explanation of natural phenomena",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Explaining lack of uniformity in MDM's UI feels like using telology to explain coloration of birds.  Sometimes these things just happen on their own."
+  },
+  "sesquipedalian": {
+    "Identifier": 62,
+    "word": "sesquipedalian",
+    "date_added": "2018-01-24T00:00:00",
+    "date_published": "2018-01-24T00:00:00",
+    "definition": "(of a word) polysyllabic; long",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I like words that describe themsleves, like sesquipedalian or curt."
+  },
+  "robust": {
+    "Identifier": 63,
+    "word": "robust",
+    "date_added": "2018-04-12T00:00:00",
+    "date_published": "2018-04-12T00:00:00",
+    "definition": "strong and healthy; vigorous",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Lyn was upset at being labeled robust."
+  },
+  "consumption": {
+    "Identifier": 64,
+    "word": "consumption",
+    "date_added": "2018-02-06T00:00:00",
+    "date_published": "2018-02-06T00:00:00",
+    "definition": "a wasting disease, especially pulmonary tuberculosis",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "This cough makes it sound like I've got the consumption."
+  },
+  "haughty": {
+    "Identifier": 65,
+    "word": "haughty",
+    "date_added": "2018-02-05T00:00:00",
+    "date_published": "2018-02-05T00:00:00",
+    "definition": "arrogantly superior and disdainful",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "If the Patriots were not so consistently haughty, I would not have been so thrilled to see them get their comeuppance."
+  },
+  "belligerent": {
+    "Identifier": 66,
+    "word": "belligerent",
+    "date_added": "2018-02-02T00:00:00",
+    "date_published": "2018-02-02T00:00:00",
+    "definition": "hostile and aggressive",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Productivity drops after the team gets belligerent the night before."
+  },
+  "kerfuffle": {
+    "Identifier": 67,
+    "word": "kerfuffle",
+    "date_added": "2018-02-01T00:00:00",
+    "date_published": "2018-02-01T00:00:00",
+    "definition": "a commotion or fuss, especially one caused by conflicting views",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "It is hard to talk politics in this day and age without causing a kerfuffle."
+  },
+  "panopticon": {
+    "Identifier": 68,
+    "word": "panopticon",
+    "date_added": "2018-01-31T00:00:00",
+    "date_published": "2018-01-31T00:00:00",
+    "definition": "a type of prison where all cells are visible from the center of the building",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "\"Did you know that Jeremy Bentham designd the panopticon?\" \"No! What use is that knowledge?\""
+  },
+  "hoary": {
+    "Identifier": 69,
+    "word": "hoary",
+    "date_added": "2018-04-13T00:00:00",
+    "date_published": "2018-04-13T00:00:00",
+    "definition": "grayish white",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I went to the barber, and I was surprised to see so many hoary hairs removed from my head."
+  },
+  "tryst": {
+    "Identifier": 70,
+    "word": "tryst",
+    "date_added": "2018-02-13T00:00:00",
+    "date_published": "2018-02-13T00:00:00",
+    "definition": "a private, often romantic, rendezvous",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "The investor was surprised to discuss setting up his next trust seeing as the invitation had advertised a tryst."
+  },
+  "masticate": {
+    "Identifier": 71,
+    "word": "masticate",
+    "date_added": "2018-02-12T00:00:00",
+    "date_published": "2018-02-12T00:00:00",
+    "definition": "to chew (food)",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Please masticate fully before swallowing."
+  },
+  "loricate": {
+    "Identifier": 72,
+    "word": "loricate",
+    "date_added": "2018-02-09T00:00:00",
+    "date_published": "2018-02-09T00:00:00",
+    "definition": "to cover with some protecting substance",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Ice hockey looks fun, but I couldn't get used to loricating before every game."
+  },
+  "laconic": {
+    "Identifier": 73,
+    "word": "laconic",
+    "date_added": "2018-02-08T00:00:00",
+    "date_published": "2018-02-08T00:00:00",
+    "definition": "using very few words",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I'm laconic"
+  },
+  "phlegmatic": {
+    "Identifier": 74,
+    "word": "phlegmatic",
+    "date_added": "0208-02-07T00:00:00",
+    "date_published": "0208-02-07T00:00:00",
+    "definition": "1. having an unemotional and stolidly calm disposition 2. abounding in phlegm (archaic)",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Josh is phlegmatic about 90% of the time."
+  },
+  "rube": {
+    "Identifier": 75,
+    "word": "rube",
+    "date_added": "2018-04-16T00:00:00",
+    "date_published": "2018-04-16T00:00:00",
+    "definition": "a country bumpkin",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Sometimes Hamo looks at my clothing and thinks me a rube."
+  },
+  "adjudicate": {
+    "Identifier": 76,
+    "word": "adjudicate",
+    "date_added": "2018-02-21T00:00:00",
+    "date_published": "2018-02-21T00:00:00",
+    "definition": "to make a formal judgement or decision about a problem or disputed matter",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "I am sad Pinak will not be adjudicating our engagement discussion."
+  },
+  "punctilious": {
+    "Identifier": 77,
+    "word": "punctilious",
+    "date_added": "2018-02-20T00:00:00",
+    "date_published": "2018-02-20T00:00:00",
+    "definition": "showing great attention to detail or correct behavior",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "With the goal of shorter Tuesday morning meetings, we could stand to be a bit more punctilious."
+  },
+  "opprobium": {
+    "Identifier": 78,
+    "word": "opprobium",
+    "date_added": "2018-02-16T00:00:00",
+    "date_published": "2018-02-16T00:00:00",
+    "definition": "harsh criticism or censure",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "All my code reviews end in opprobium."
+  },
+  "bounder": {
+    "Identifier": 79,
+    "word": "bounder",
+    "date_added": "2018-02-14T00:00:00",
+    "date_published": "2018-02-14T00:00:00",
+    "definition": "a dishonorable man",
+    "ipa": null,
+    "partOfSpeech": "a dishonorable man",
+    "exampleSentence": "'Happy Valentine's Day!', quoth the freshly single bounder."
+  },
+  "corpulent": {
+    "Identifier": 80,
+    "word": "corpulent",
+    "date_added": "2018-02-15T00:00:00",
+    "date_published": "2018-02-15T00:00:00",
+    "definition": "(of a person) overweight",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "In high school, I was downright corpulent."
+  },
+  "quandry": {
+    "Identifier": 81,
+    "word": "quandry",
+    "date_added": "2018-03-12T00:00:00",
+    "date_published": "2018-03-12T00:00:00",
+    "definition": "a state of perplexity or uncertainty over what to do in a difficult situation",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "The perfectionist was in a quandry after misspelling a word on his sign."
+  },
+  "circumspect": {
+    "Identifier": 82,
+    "word": "circumspect",
+    "date_added": "2018-04-17T00:00:00",
+    "date_published": "2018-04-17T00:00:00",
+    "definition": "wary and unwilling to take risks",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Developers should always be circumspect when it comes to pushing code out to production."
+  },
+  "knave": {
+    "Identifier": 83,
+    "word": "knave",
+    "date_added": "2018-04-18T00:00:00",
+    "date_published": "2018-04-18T00:00:00",
+    "definition": "a dishonest or unscrupulous man",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "'A knavish speech sleeps in a foolish ear.' -Hamlet"
+  },
+  "chicanery": {
+    "Identifier": 84,
+    "word": "chicanery",
+    "date_added": "2018-03-15T00:00:00",
+    "date_published": "2018-03-15T00:00:00",
+    "definition": "the use of trickery to achieve a political, financial, or legal purpose",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Unable to stop Caesar's power grab politiclaly, members of the senate resorted to chicanery."
+  },
+  "hale": {
+    "Identifier": 85,
+    "word": "hale",
+    "date_added": "2018-03-14T00:00:00",
+    "date_published": "2018-03-14T00:00:00",
+    "definition": "(of a person) strong and healthy",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "My great great uncle was pretty hale for a 101 year old."
+  },
+  "boorish": {
+    "Identifier": 86,
+    "word": "boorish",
+    "date_added": "2018-03-13T00:00:00",
+    "date_published": "2018-03-13T00:00:00",
+    "definition": "rough and bad-mannered; coarse",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The curt dismissal of his underling revealed his boorish nature."
+  },
+  "uncouth": {
+    "Identifier": 87,
+    "word": "uncouth",
+    "date_added": "2018-03-09T00:00:00",
+    "date_published": "2018-03-09T00:00:00",
+    "definition": "lacking good manners, grace",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "It is uncouth to belch at table."
+  },
+  "insipid": {
+    "Identifier": 88,
+    "word": "insipid",
+    "date_added": "2018-02-26T00:00:00",
+    "date_published": "2018-02-26T00:00:00",
+    "definition": "1. lacking flavor 2. lacking vigor or interest",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The conversation at brunch was as insipid as the huevos rancheros."
+  },
+  "galoot": {
+    "Identifier": 89,
+    "word": "galoot",
+    "date_added": "2018-02-22T00:00:00",
+    "date_published": "2018-02-22T00:00:00",
+    "definition": "a clumsy or oafish person",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "\"I don't know how to eat or drink without spilling everwhere,\" quoth the galoot."
+  },
+  "bubo": {
+    "Identifier": 90,
+    "word": "bubo",
+    "date_added": "2018-04-19T00:00:00",
+    "date_published": "2018-04-19T00:00:00",
+    "definition": "a sweollen, inflated lymph node in the arpit or groin",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I think the bubos are the worst part of the bubonic plague."
+  },
+  "dereliction": {
+    "Identifier": 91,
+    "word": "dereliction",
+    "date_added": "2018-03-08T00:00:00",
+    "date_published": "2018-03-08T00:00:00",
+    "definition": "1) the state of having been abandoned and become diapidated 2) the shameful failure to fulfill one's duties",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I missed today's word in a dereliction of my duties."
+  },
+  "wag": {
+    "Identifier": 92,
+    "word": "wag",
+    "date_added": "2018-02-27T00:00:00",
+    "date_published": "2018-02-27T00:00:00",
+    "definition": "a person who makes facetious jokes",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "What mad wag killed 1.5% of a tree as a practical joke?"
+  },
+  "Adonic": {
+    "Identifier": 93,
+    "word": "Adonic",
+    "date_added": "2018-03-01T00:00:00",
+    "date_published": "2018-03-01T00:00:00",
+    "definition": "very beautiful or handsome; physically perfect; like Adonis from Greek Myth",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The presidential Fitness Test did not result in an Adonic frame for me."
+  },
+  "varlet": {
+    "Identifier": 94,
+    "word": "varlet",
+    "date_added": "2018-02-28T00:00:00",
+    "date_published": "2018-02-28T00:00:00",
+    "definition": "1. a boy acting as an attendant or servant 2. a dishonest or unprincipled man",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I just made that skee-ball my varlet!"
+  },
+  "hooch": {
+    "Identifier": 95,
+    "word": "hooch",
+    "date_added": "2018-04-20T00:00:00",
+    "date_published": "2018-04-20T00:00:00",
+    "definition": "alcoholic liquor, especially inferior or illicit whiskey",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Logan said that 10:50am was too early to break out the hooch."
+  },
+  "obsequious": {
+    "Identifier": 96,
+    "word": "obsequious",
+    "date_added": "2018-03-07T00:00:00",
+    "date_published": "2018-03-07T00:00:00",
+    "definition": "obedient or attentive to an excessive or servile degree",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The obsequious job candidate did not do well in the interview."
+  },
+  "testy": {
+    "Identifier": 97,
+    "word": "testy",
+    "date_added": "2018-03-06T00:00:00",
+    "date_published": "2018-03-06T00:00:00",
+    "definition": "easily irritated; impatient and somehwat bad-tempered",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "People get testy when the group orders do not show up until after 1:00pm."
+  },
+  "ruffian": {
+    "Identifier": 98,
+    "word": "ruffian",
+    "date_added": "2018-03-05T00:00:00",
+    "date_published": "2018-03-05T00:00:00",
+    "definition": "a violent person, especially one involved in crime",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "The property values have fallen off sharply after the ruffians started squatting in our neighborhood."
+  },
+  "tempestuous": {
+    "Identifier": 99,
+    "word": "tempestuous",
+    "date_added": "2018-03-02T00:00:00",
+    "date_published": "2018-03-02T00:00:00",
+    "definition": "1) characterized by strong and turbulent or conflicting emotion 2) very stormy",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The weather may be unpleasant here, but it was downright tempestuous up in Westchester."
+  },
+  "grognard": {
+    "Identifier": 100,
+    "word": "grognard",
+    "date_added": "2018-04-23T00:00:00",
+    "date_published": "2018-04-23T00:00:00",
+    "definition": "1) an old soldier 2) (slang) someone who enjoys older games or older versions of games even when newer ones are available",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Is TC a gorgnard for refusing to use posst-bootstrab screenshots?"
+  },
+  "despondent": {
+    "Identifier": 101,
+    "word": "despondent",
+    "date_added": "2018-04-24T00:00:00",
+    "date_published": "2018-04-24T00:00:00",
+    "definition": "in low spirits from loss hope or courage",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The BA was despondent after the design review went off topic."
+  },
+  "bemused": {
+    "Identifier": 102,
+    "word": "bemused",
+    "date_added": "2018-04-25T00:00:00",
+    "date_published": "2018-04-25T00:00:00",
+    "definition": "to be puzzled, confused, or bewildered",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "We were bemused to find that hancho was not in the dictionary."
+  },
+  "apoplectic": {
+    "Identifier": 103,
+    "word": "apoplectic",
+    "date_added": "2018-04-26T00:00:00",
+    "date_published": "2018-04-26T00:00:00",
+    "definition": "overcome with anger; extremely indignant",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The obdurate stakeholder sent the team lead into an apoplectic fit with his baseless demands."
+  },
+  "exchequer": {
+    "Identifier": 104,
+    "word": "exchequer",
+    "date_added": "2018-04-27T00:00:00",
+    "date_published": "2018-04-27T00:00:00",
+    "definition": "a royal or national treasury",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Despite paying taxes to the exchequer, some do not know how to pronounce its name."
+  },
+  "gammerstang": {
+    "Identifier": 105,
+    "word": "gammerstang",
+    "date_added": "2018-04-30T00:00:00",
+    "date_published": "2018-04-30T00:00:00",
+    "definition": "a tall, ungainly, or awkward person (usally a woman)",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I hear the north of Britain is full of gammerstangs."
+  },
+  "moribund": {
+    "Identifier": 106,
+    "word": "moribund",
+    "date_added": "2018-05-01T00:00:00",
+    "date_published": "2018-05-01T00:00:00",
+    "definition": "(of a person) at the point of death; (of a thing) in terminal decline, or lacking vitality or vigor",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Reading the \"Decline and Fall of the Roman Empire\" reminds me of another moribund empire."
+  },
+  "nullipotent": {
+    "Identifier": 107,
+    "word": "nullipotent",
+    "date_added": "2018-05-02T00:00:00",
+    "date_published": "2018-05-02T00:00:00",
+    "definition": "describing an action which has no side effect",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I'm working really hard, but sometimes the lack of tangible results makes me feel nullipotent."
+  },
+  "prodigal": {
+    "Identifier": 108,
+    "word": "prodigal",
+    "date_added": "2018-05-03T00:00:00",
+    "date_published": "2018-05-03T00:00:00",
+    "definition": "1. spending money or resources freely and recklessly; woefully extravegant 2. (prodigal son) biblical allusion to Jesus's parable involving the return of a wayward person",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "At last, team Fitz's prodigal son has returned!"
+  },
+  "skulk": {
+    "Identifier": 109,
+    "word": "skulk",
+    "date_added": "2018-05-04T00:00:00",
+    "date_published": "2018-05-04T00:00:00",
+    "definition": "keep out of sight, typically with a sinister or cowardly motive.",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Our team lead left early, skulking off to the bar."
+  },
+  "macabre": {
+    "Identifier": 110,
+    "word": "macabre",
+    "date_added": "2018-05-07T00:00:00",
+    "date_published": "2018-05-07T00:00:00",
+    "definition": "disturbing and horrifying because of involvement with or depiction of death and injury",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "\"Only dead fish follow the flow\" seems a little macabre as proverbs go."
+  },
+  "upbraid": {
+    "Identifier": 111,
+    "word": "upbraid",
+    "date_added": "2018-05-08T00:00:00",
+    "date_published": "2018-05-08T00:00:00",
+    "definition": "to find fault with (someone); scold",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Surprisingly, no one was upbraided for being late to the presentation."
+  },
+  "dither": {
+    "Identifier": 112,
+    "word": "dither",
+    "date_added": "2018-05-09T00:00:00",
+    "date_published": "2018-05-09T00:00:00",
+    "definition": "be indecisive",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Repeated changes to the process would not be so demoralizing if they were not punctuated by dithering about our options."
+  },
+  "fleece": {
+    "Identifier": 113,
+    "word": "fleece",
+    "date_added": "2018-05-10T00:00:00",
+    "date_published": "2018-05-10T00:00:00",
+    "definition": "1) obtain a great deal of money from someone, typically by swindling them 2)(archaic) to strip or remove, evoking shearing sheep",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "If my shoes cannot be worn every day for three years without falling apart, I feel I have been fleeced."
+  },
+  "compunction": {
+    "Identifier": 114,
+    "word": "compunction",
+    "date_added": "2018-05-14T00:00:00",
+    "date_published": "2018-05-14T00:00:00",
+    "definition": "a feeling of guilt or moral scruple that prevents or follows the doing of something bad",
+    "ipa": null,
+    "partOfSpeech": "a feeling of guilt or moral scruple that prevents or follows the doing of something bad",
+    "exampleSentence": "I have no compunctions about day drinking on the weekend."
+  },
+  "amble": {
+    "Identifier": 115,
+    "word": "amble",
+    "date_added": "2018-05-16T00:00:00",
+    "date_published": "2018-05-16T00:00:00",
+    "definition": "to walk or move at a slow, relaxed pace",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "All my problems today were sovled by devs who happened to be ambling by."
+  },
+  "tendentious": {
+    "Identifier": 116,
+    "word": "tendentious",
+    "date_added": "2018-05-17T00:00:00",
+    "date_published": "2018-05-17T00:00:00",
+    "definition": "expressing or intending to promote a particular cause or point of view, especially a controversial one",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I found the notes from the conference on the project management tool to be a bit tendentious."
+  },
+  "dole": {
+    "Identifier": 117,
+    "word": "dole",
+    "date_added": "2018-05-21T00:00:00",
+    "date_published": "2018-05-21T00:00:00",
+    "definition": "distribute shares of something",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "Who is responsiblew for doling out interns to teams?"
+  },
+  "anodyne": {
+    "Identifier": 118,
+    "word": "anodyne",
+    "date_added": "2018-05-23T00:00:00",
+    "date_published": "2018-05-23T00:00:00",
+    "definition": "not likely to provoke dissent or offense; (often) deliberately inoffensive",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "For once, I would like some anodyne changes to the organization."
+  },
+  "truculent": {
+    "Identifier": 119,
+    "word": "truculent",
+    "date_added": "2018-05-24T00:00:00",
+    "date_published": "2018-05-24T00:00:00",
+    "definition": "eager or quick to argue or fight; aggressively defiant",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "People around here sure are truculent."
+  },
+  "poppycock": {
+    "Identifier": 120,
+    "word": "poppycock",
+    "date_added": "2018-05-25T00:00:00",
+    "date_published": "2018-05-25T00:00:00",
+    "definition": "nonsense",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Bob is about 95% poppycock."
+  },
+  "atavism": {
+    "Identifier": 121,
+    "word": "atavism",
+    "date_added": "2018-05-29T00:00:00",
+    "date_published": "2018-05-29T00:00:00",
+    "definition": "the reappearance of an ancestral characteristic in an organism after several generations of absence",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Due to atavism, I should retain a full head of hair."
+  },
+  "comely": {
+    "Identifier": 122,
+    "word": "comely",
+    "date_added": "2018-05-30T00:00:00",
+    "date_published": "2018-05-30T00:00:00",
+    "definition": "pleasant to look at; attractive",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I got smacked at the bar when the lady thought I called her homely instead of comely."
+  },
+  "eudemonia": {
+    "Identifier": 123,
+    "word": "eudemonia",
+    "date_added": "2018-06-01T00:00:00",
+    "date_published": "2018-06-01T00:00:00",
+    "definition": "a state of pleasant well-being",
+    "ipa": null,
+    "partOfSpeech": "noun\\",
+    "exampleSentence": "I am glad we have the culture committee to help promte eudemonia across the floor."
+  },
+  "boondoggle": {
+    "Identifier": 124,
+    "word": "boondoggle",
+    "date_added": "2018-06-04T00:00:00",
+    "date_published": "2018-06-04T00:00:00",
+    "definition": "work or activity that is wasteful or pointless but gives the appearance of having value",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Thought experiment: how many projects on the project plan are boondoggles insisted on by our stakeholders?"
+  },
+  "traipse": {
+    "Identifier": 125,
+    "word": "traipse",
+    "date_added": "2018-06-05T00:00:00",
+    "date_published": "2018-06-05T00:00:00",
+    "definition": "to go on foot without apparent purpose; to walk or move wearily or reluctantly",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "I go to traipse merrily about Ohio."
+  },
+  "penury": {
+    "Identifier": 126,
+    "word": "penury",
+    "date_added": "2018-06-25T00:00:00",
+    "date_published": "2018-06-25T00:00:00",
+    "definition": "extreme poverty; destitution",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "The wedding expenses have left me in penury."
+  },
+  "hooligan": {
+    "Identifier": 127,
+    "word": "hooligan",
+    "date_added": "2018-06-26T00:00:00",
+    "date_published": "2018-06-26T00:00:00",
+    "definition": "a violent young troublemaker, typically one of a gang",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "My favorite part of the World Cup is the footage of hooligans."
+  },
+  "effulgent": {
+    "Identifier": 128,
+    "word": "effulgent",
+    "date_added": "2018-07-09T00:00:00",
+    "date_published": "2018-07-09T00:00:00",
+    "definition": "shining brightly; radiant",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I expect my new-hires to be optimistic and my interns to be downright effulgent."
+  },
+  "decorous": {
+    "Identifier": 129,
+    "word": "decorous",
+    "date_added": "2018-07-11T00:00:00",
+    "date_published": "2018-07-11T00:00:00",
+    "definition": "in keeping with good taste and propriety; polite and restrained",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I am having a hard time remaining decorous after England's exit from the tournament."
+  },
+  "sooth": {
+    "Identifier": 130,
+    "word": "sooth",
+    "date_added": "2018-07-12T00:00:00",
+    "date_published": "2018-07-12T00:00:00",
+    "definition": "truth",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Say sooth, are these pants flattering?"
+  },
+  "ambulant": {
+    "Identifier": 131,
+    "word": "ambulant",
+    "date_added": "2018-07-16T00:00:00",
+    "date_published": "2018-07-16T00:00:00",
+    "definition": "able to walk around; not confined to bed",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "My father described his childhood dog as 'an ambulant barrel.'"
+  },
+  "befuddle": {
+    "Identifier": 132,
+    "word": "befuddle",
+    "date_added": "2018-07-17T00:00:00",
+    "date_published": "2018-07-17T00:00:00",
+    "definition": "make (someone) unable to think clearly",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "I think I befuddled the room with the wordiness of my explenation."
+  },
+  "delectation": {
+    "Identifier": 133,
+    "word": "delectation",
+    "date_added": "2018-07-26T00:00:00",
+    "date_published": "2018-07-26T00:00:00",
+    "definition": "pleasure and delight",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I only did the word of the day today for Josh's delectation."
+  },
+  "voracious": {
+    "Identifier": 134,
+    "word": "voracious",
+    "date_added": "2018-08-02T00:00:00",
+    "date_published": "2018-08-02T00:00:00",
+    "definition": "wanting or devouring great quantities of food",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Lunch was so late, I was absolutely voracious by the time it arrived."
+  },
+  "overweening": {
+    "Identifier": 135,
+    "word": "overweening",
+    "date_added": "2018-08-06T00:00:00",
+    "date_published": "2018-08-06T00:00:00",
+    "definition": "showing excessive confidence or pride",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The overweening salesman had no credibility considering his sales record."
+  },
+  "hapless": {
+    "Identifier": 136,
+    "word": "hapless",
+    "date_added": "2018-08-07T00:00:00",
+    "date_published": "2018-08-07T00:00:00",
+    "definition": "having no luck",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "We should all pity Harriett, Maya's new hapless office plant."
+  },
+  "rehypothecation": {
+    "Identifier": 137,
+    "word": "rehypothecation",
+    "date_added": "2018-08-14T00:00:00",
+    "date_published": "2018-08-14T00:00:00",
+    "definition": "Rehypothecation is the practice by banks and brokers of using, for their own purposes, assets that have been posted as collateral by their clients.",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I scored a jet ski as collateral when I loaned my car to a friend, so am I bad person for renting it out to the neighbors as rehypothecation?"
+  },
+  "overmorrow": {
+    "Identifier": 138,
+    "word": "overmorrow",
+    "date_added": "2018-08-15T00:00:00",
+    "date_published": "2018-08-15T00:00:00",
+    "definition": "the day after tomorrow",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Do you have any plans after work overmorrow?"
+  },
+  "ennui": {
+    "Identifier": 139,
+    "word": "ennui",
+    "date_added": "2018-08-16T00:00:00",
+    "date_published": "2018-08-16T00:00:00",
+    "definition": "a feeling of listlessness and dissatisfaction arising from a lack of occupation or excitement",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "N is for Neville, who died of ennui."
+  },
+  "impasse": {
+    "Identifier": 140,
+    "word": "impasse",
+    "date_added": "2018-09-07T00:00:00",
+    "date_published": "2018-09-07T00:00:00",
+    "definition": "a situation in which no progress is possible, especially because of disagreement; a deadlock",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "\"We cannot reproduce the bug, so we are kind of at an impasse.\""
+  },
+  "polyglot": {
+    "Identifier": 141,
+    "word": "polyglot",
+    "date_added": "2018-09-14T00:00:00",
+    "date_published": "2018-09-14T00:00:00",
+    "definition": "a person who knows and is able to use several languages",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Is a person who can code in multiple computer languages considered a polyglot?"
+  },
+  "wastrel": {
+    "Identifier": 142,
+    "word": "wastrel",
+    "date_added": "2018-09-24T00:00:00",
+    "date_published": "2018-09-24T00:00:00",
+    "definition": "wasteful or good-for-nothing person",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Last year for my 360 reviews, I was told to be less of a wastrel."
+  },
+  "affable": {
+    "Identifier": 143,
+    "word": "affable",
+    "date_added": "2018-09-28T00:00:00",
+    "date_published": "2018-09-28T00:00:00",
+    "definition": "friendly, good-natured, or easy to talk to",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "During the phone screen, she seemed quite affable."
+  },
+  "privation": {
+    "Identifier": 144,
+    "word": "privation",
+    "date_added": "2018-10-01T00:00:00",
+    "date_published": "2018-10-01T00:00:00",
+    "definition": "a state in which things that are essential for human well-being such as food and warmth are scarce or lacking",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Years of family vacation have prepared me for the privation I suffer through these days."
+  },
+  "anthropomorphic": {
+    "Identifier": 145,
+    "word": "anthropomorphic",
+    "date_added": "2018-10-02T00:00:00",
+    "date_published": "2018-10-02T00:00:00",
+    "definition": "having human characteristics",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Doesn't CERPI sound like an anthropomorphic reptile on a Canadian kid's show?"
+  },
+  "putrid": {
+    "Identifier": 146,
+    "word": "putrid",
+    "date_added": "2018-10-03T00:00:00",
+    "date_published": "2018-10-03T00:00:00",
+    "definition": "(of organic matter) decaying or rotting and emitting a fetid smell",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Garbage cans are often putrid."
+  },
+  "usury": {
+    "Identifier": 147,
+    "word": "usury",
+    "date_added": "2018-10-08T00:00:00",
+    "date_published": "2018-10-08T00:00:00",
+    "definition": "the illegal action or practice of lending money at unreasonably high rates of interest",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I had to explain to my father why carried interest did not count as usury."
+  },
+  "crepuscular": {
+    "Identifier": 148,
+    "word": "crepuscular",
+    "date_added": "2018-10-10T00:00:00",
+    "date_published": "2018-10-10T00:00:00",
+    "definition": "of or resembling twilight; active at or round dusk",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "No, I'm not a night owl, but I would describe myself as crepuscular."
+  },
+  "floccinaucinihilipilification": {
+    "Identifier": 149,
+    "word": "floccinaucinihilipilification",
+    "date_added": "2018-10-12T00:00:00",
+    "date_published": "2018-10-12T00:00:00",
+    "definition": "the action or habit of estimating something as worthless",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Floccinaucinihilipilification is not an attractive habit in a manager."
+  },
+  "fissiparousness": {
+    "Identifier": 150,
+    "word": "fissiparousness",
+    "date_added": "2018-10-15T00:00:00",
+    "date_published": "2018-10-15T00:00:00",
+    "definition": "the tendency to break or split up into parts",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Coalitions usually tend towards fissiparousness at the first sign of success."
+  },
+  "slink": {
+    "Identifier": 151,
+    "word": "slink",
+    "date_added": "2018-10-18T00:00:00",
+    "date_published": "2018-10-18T00:00:00",
+    "definition": "move smoothly and quietly with gliding steps, in a stealthy or sensuous manner",
+    "ipa": null,
+    "partOfSpeech": "verb",
+    "exampleSentence": "I was caught trying to slink out of the retrospection as the topic turned to gaps in our designs."
+  },
+  "recidivist": {
+    "Identifier": 152,
+    "word": "recidivist",
+    "date_added": "2018-10-23T00:00:00",
+    "date_published": "2018-10-23T00:00:00",
+    "definition": "a convicted criminal who reoffends, especially repeatedly",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Recidivist is a tinny sort of word..."
+  },
+  "antediluvian": {
+    "Identifier": 153,
+    "word": "antediluvian",
+    "date_added": "2018-10-26T00:00:00",
+    "date_published": "2018-10-26T00:00:00",
+    "definition": "of or belonging to the time before the biblical Flood",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Some people say my word choice is positively antediluvian."
+  },
+  "opprobrium": {
+    "Identifier": 154,
+    "word": "opprobrium",
+    "date_added": "2018-11-02T00:00:00",
+    "date_published": "2018-11-02T00:00:00",
+    "definition": "harsh criticism or censure",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I have been receiving the opprobium of several people for neglecting the word of the day."
+  },
+  "kibosh": {
+    "Identifier": 155,
+    "word": "kibosh",
+    "date_added": "2018-11-07T00:00:00",
+    "date_published": "2018-11-07T00:00:00",
+    "definition": "put an end to; dispose of decisively",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "Manny contiunally tries to put the kibosh on my meals."
+  },
+  "bumbershoot": {
+    "Identifier": 156,
+    "word": "bumbershoot",
+    "date_added": "2018-11-08T00:00:00",
+    "date_published": "2018-11-08T00:00:00",
+    "definition": "umbrella",
+    "ipa": "bum-burr-shoot",
+    "partOfSpeech": "noun",
+    "exampleSentence": "Blast! I left my bumbershoot out on the croquet lawn."
+  },
+  "gull": {
+    "Identifier": 157,
+    "word": "gull",
+    "date_added": "2018-11-14T00:00:00",
+    "date_published": "2018-11-14T00:00:00",
+    "definition": "fool or deceive (someone)",
+    "ipa": "gul",
+    "partOfSpeech": "verb",
+    "exampleSentence": "I had a colleague who continually tried to gull everyone into thinking he was attractive."
+  },
+  "obstreperous": {
+    "Identifier": 158,
+    "word": "obstreperous",
+    "date_added": "2018-11-15T00:00:00",
+    "date_published": "2018-11-15T00:00:00",
+    "definition": "noisy and difficult to control",
+    "ipa": "?b'strep?r?s",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "His loud voice and truculent nature led to him scoring a 'Talent rarely seen' score in the obstreperous category of his 360 review."
+  },
+  "feckless": {
+    "Identifier": 159,
+    "word": "feckless",
+    "date_added": "2018-11-16T00:00:00",
+    "date_published": "2018-11-16T00:00:00",
+    "definition": "lacking initiative or strenght of character, irresponsible",
+    "ipa": "'fekles",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I am straned at home today due to my feckless dog walker."
+  },
+  "bamboozle": {
+    "Identifier": 160,
+    "word": "bamboozle",
+    "date_added": "2018-11-20T00:00:00",
+    "date_published": "2018-11-20T00:00:00",
+    "definition": "fool or cheat; confound or perplex",
+    "ipa": "bam'boozul",
+    "partOfSpeech": "verb",
+    "exampleSentence": "The trusting software engineer was bamboozled by the cagy veteran developer who managed to outsource all his work to the former."
+  },
+  "constitutional": {
+    "Identifier": 161,
+    "word": "constitutional",
+    "date_added": "2018-11-29T00:00:00",
+    "date_published": "2018-11-29T00:00:00",
+    "definition": "a walk, typically one taken regularly to maintain or restore good health",
+    "ipa": "kanste'tooshunul",
+    "partOfSpeech": "noun",
+    "exampleSentence": "Zach shared his struggles with slack today as he took his afternoon constitutional."
+  },
+  "stertorously": {
+    "Identifier": 162,
+    "word": "stertorously",
+    "date_added": "2018-12-06T00:00:00",
+    "date_published": "2018-12-06T00:00:00",
+    "definition": "characterized by a harsh snoring or gasping sound",
+    "ipa": "'st?r-t?-r?s",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I think the part of family camping vacations that I miss least is the stertorous noise that came from my father's tent."
+  },
+  "tatterdemalion": {
+    "Identifier": 163,
+    "word": "tatterdemalion",
+    "date_added": "2018-12-17T00:00:00",
+    "date_published": "2018-12-17T00:00:00",
+    "definition": "a person dressed in ragged clothing",
+    "ipa": "tæt?d?'me?li?n",
+    "partOfSpeech": "noun",
+    "exampleSentence": "My wife mistook me for a tatterdemalion when I returned home after the holiday party."
+  },
+  "querulous": {
+    "Identifier": 164,
+    "word": "querulous",
+    "date_added": "2018-12-19T00:00:00",
+    "date_published": "2018-12-19T00:00:00",
+    "definition": "habitually complaining",
+    "ipa": "'kwer-y?-l?s",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I was not nominated for any superlatives in high school, but I was awarded most querulous after months of protesting the superlative categories."
+  },
+  "trephine": {
+    "Identifier": 165,
+    "word": "trephine",
+    "date_added": "2019-01-02T00:00:00",
+    "date_published": "2019-01-02T00:00:00",
+    "definition": "to operate on with a trephine (a hole saw used in surgery to remove a circle of tissue or bone)",
+    "ipa": "tr?'fin",
+    "partOfSpeech": "verb",
+    "exampleSentence": "I woke up on New Year's Day feeling like I had been trephined in the night."
+  },
+  "machicolation": {
+    "Identifier": 166,
+    "word": "machicolation",
+    "date_added": "2019-01-16T00:00:00",
+    "date_published": "2019-01-16T00:00:00",
+    "definition": "(in medieval fortifications) an opening between the supporting corbels of a projecting parapet or the vault of a gate, through which stones or burning objects could be dropped on attackers",
+    "ipa": "m??CHik?'laSH?n",
+    "partOfSpeech": "noun",
+    "exampleSentence": "I suggested both machicolations and murder holes when we were designing the floorplan for the 22nd floor, but my suggestions were ignored."
+  },
+  "panglossian": {
+    "Identifier": 167,
+    "word": "panglossian",
+    "date_added": "2019-01-17T00:00:00",
+    "date_published": "2019-01-17T00:00:00",
+    "definition": "naively or unreasonably optimistic",
+    "ipa": "pæn'gl?si.?n",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The business analyst proposed a panglossian project plan for the first quarter."
+  },
+  "mirth": {
+    "Identifier": 168,
+    "word": "mirth",
+    "date_added": "2019-01-18T00:00:00",
+    "date_published": "2019-01-18T00:00:00",
+    "definition": "amusement, especially as expressed in laughter",
+    "ipa": "m?rTH",
+    "partOfSpeech": "noun",
+    "exampleSentence": "\"You have displaced the mirth, broke the good meeting, With most admired disorder.\" Lady M"
+  },
+  "ex cathedra": {
+    "Identifier": 169,
+    "word": "ex cathedra",
+    "date_added": "2019-01-22T00:00:00",
+    "date_published": "2019-01-22T00:00:00",
+    "definition": "with the full authority of office (especially of the Pope's infallibility as defined in Roman Catholic doctrine)",
+    "ipa": "eks k?'THedr?",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Sometimes, it feels like project management standards are dictated ex cathedra."
+  },
+  "salubrious": {
+    "Identifier": 170,
+    "word": "salubrious",
+    "date_added": "2019-01-23T00:00:00",
+    "date_published": "2019-01-23T00:00:00",
+    "definition": "health-giving; healthy",
+    "ipa": "s?'lu?.b?i?.?s",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The wild swings in temperature do not make for a salubrious populus."
+  },
+  "paucity": {
+    "Identifier": 171,
+    "word": "paucity",
+    "date_added": "2019-01-24T00:00:00",
+    "date_published": "2019-01-24T00:00:00",
+    "definition": "the presence of something only in small or insufficient quantities or amounts; scarcity",
+    "ipa": "'pôs?de",
+    "partOfSpeech": "noun",
+    "exampleSentence": "We have a paucity of patience in this place."
+  },
+  "abscond": {
+    "Identifier": 172,
+    "word": "abscond",
+    "date_added": "2019-01-31T00:00:00",
+    "date_published": "2019-01-31T00:00:00",
+    "definition": "leave hurriedly and secretly, typically to avoid detection of or arrest for an unlawful action such as theft",
+    "ipa": "?b'skänd",
+    "partOfSpeech": "verb",
+    "exampleSentence": "The spy was captured attempting to abscond with state secrets which had been posted on Confluence."
+  },
+  "gantry": {
+    "Identifier": 173,
+    "word": "gantry",
+    "date_added": "2019-02-05T00:00:00",
+    "date_published": "2019-02-05T00:00:00",
+    "definition": "a bridge-like overhead structure with a platform supporting equipment such as a crane, railroad signals, lights, or cameras",
+    "ipa": "gantre",
+    "partOfSpeech": "noun",
+    "exampleSentence": "The astronaut was embarrassed to admit that he had left his keys on the gantry before the rocket had been sealed."
+  },
+  "tenacity": {
+    "Identifier": 174,
+    "word": "tenacity",
+    "date_added": "2019-02-06T00:00:00",
+    "date_published": "2019-02-06T00:00:00",
+    "definition": "the quality or fact of being able to grip something firmly; grip",
+    "ipa": "t?'nas?de",
+    "partOfSpeech": "noun",
+    "exampleSentence": "Example Sentence: I have to admire the dog's tenacity, but I would rather have my arm back if it's all the same to you."
+  },
+  "apposite": {
+    "Identifier": 175,
+    "word": "apposite",
+    "date_added": "2019-02-07T00:00:00",
+    "date_published": "2019-02-07T00:00:00",
+    "definition": "apt in the circumstances or in relation to something",
+    "ipa": "'ap?z?t",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Surely comparing the kingdom of JIRA to the kingdom of heaven is an apposite allegory."
+  },
+  "callow": {
+    "Identifier": 176,
+    "word": "callow",
+    "date_added": "2019-02-11T00:00:00",
+    "date_published": "2019-02-11T00:00:00",
+    "definition": "(of a young person) inexperienced and immature",
+    "ipa": "'kalo",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The callow developer cried when faced with the technical debt in the codebase he inherited."
+  },
+  "peripatetic": {
+    "Identifier": 177,
+    "word": "peripatetic",
+    "date_added": "2019-02-14T00:00:00",
+    "date_published": "2019-02-14T00:00:00",
+    "definition": "traveling from place to place, in particular working or based in various places for relatively short periods",
+    "ipa": "?perep?'tedik",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I spent a peripatetic day at 345 switching between floors."
+  },
+  "hector": {
+    "Identifier": 178,
+    "word": "hector",
+    "date_added": "2019-02-15T00:00:00",
+    "date_published": "2019-02-15T00:00:00",
+    "definition": "talk to (someone) in a bullying way",
+    "ipa": "'hekt?r",
+    "partOfSpeech": "verb",
+    "exampleSentence": "Horatio hectored Hector, hating his half-healed hump."
+  },
+  "oracular": {
+    "Identifier": 179,
+    "word": "oracular",
+    "date_added": "2019-02-26T00:00:00",
+    "date_published": "2019-02-26T00:00:00",
+    "definition": "(of an utterance, advice, etc.) hard to interpret; enigmatic",
+    "ipa": "ô'raky?l?r",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The logic for the MDM feed to Oracle is becoming oracular."
+  },
+  "sarcophagus": {
+    "Identifier": 180,
+    "word": "sarcophagus",
+    "date_added": "2019-02-28T00:00:00",
+    "date_published": "2019-02-28T00:00:00",
+    "definition": "a stone coffin, typically adorned with a sculpture or inscription and associated with the ancient civilizations of Egypt, Rome, and Greece",
+    "ipa": "särˈkäfəɡəs",
+    "partOfSpeech": "noun",
+    "exampleSentence": "There are several people in this firm who I suspect return to a sarcophagus for overnight storage."
+  },
+  "orthogonal": {
+    "Identifier": 181,
+    "word": "orthogonal",
+    "date_added": "2019-03-27T00:00:00",
+    "date_published": "2019-03-27T00:00:00",
+    "definition": "1) involving right angles; at right angles - 2) two or more aspects of a problem, able to be treated separately",
+    "ipa": "╔ö╔╣╦ê╬╕╔æ╔í╔Ön╔Öl",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "I had always considered bagel consumption to be orthogonal to basketball until I started working in this office."
+  },
+  "shibboleth": {
+    "Identifier": 182,
+    "word": "shibboleth",
+    "date_added": "2019-03-29T00:00:00",
+    "date_published": "2019-03-29T00:00:00",
+    "definition": "a custom, principle, or belief distinguishing a particular class or group of people, especially a long-standing one regarded as outmoded or no longer important",
+    "ipa": "╦êSHib╔Öl╔ÖTH",
+    "partOfSpeech": "noun",
+    "exampleSentence": "Judges 12:6"
+  },
+  "errant": {
+    "Identifier": 183,
+    "word": "errant",
+    "date_added": "2019-04-01T00:00:00",
+    "date_published": "2019-04-01T00:00:00",
+    "definition": "1) erring or straying from the proper course or standards 2) traveling in search of adventure",
+    "ipa": "╦êer╔Önt",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "The Blackstone BA is an errant creature, roaming around from meeting to meeting searching for businesses to analyze and problems to solve."
+  },
+  "arrant": {
+    "Identifier": 184,
+    "word": "arrant",
+    "date_added": "2019-04-01T00:00:00",
+    "date_published": "2019-04-02T00:00:00",
+    "definition": "complete, utter",
+    "ipa": "╦êer╔Önt",
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Yesterday's example sentence regarding BAs was arrant nonsense!"
+  }
+}

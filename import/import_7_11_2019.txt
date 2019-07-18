@@ -1,0 +1,21 @@
+{
+  "lugubrious": {
+    "id": 3,
+    "word": "lugubrious",
+    "date_added": "2018-01-22T00:00:00",
+    "date_published": "2018-01-22T00:00:00",
+    "definition": "looking or sounding sad and dismal",
+    "ipa": null,
+    "partOfSpeech": "adjective",
+    "exampleSentence": "Mondays always start with me looking lugubrious."
+  },
+  "rake": {
+    "id": 4,
+    "word": "rake",
+    "date_added": "2018-01-12T00:00:00",
+    "date_published": "2018-01-12T00:00:00",
+    "definition": "a man habituated to immoral conduct",
+    "ipa": null,
+    "partOfSpeech": "noun",
+    "exampleSentence": "I was scandalized to discover my own father was such a rake."
+  }}
