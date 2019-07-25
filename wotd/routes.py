@@ -1,10 +1,11 @@
 import os
 import secrets
+import random
 from datetime import datetime
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from wotd import app, db, flask_bcrypt
-from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WordForm
+from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WordForm, SearchForm
 from wotd.models import User, Post, Word
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -21,16 +22,53 @@ def home():
     return render_template('home.html', word=word)
 
 
-@app.route("/wordbank")
-def wordbank():
-    words = Word.query.all()
-    return render_template('word_bank.html', words=words)
+@app.route("/word_bank", methods=['GET', 'POST'])
+def word_bank():
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
+    else:
+        words = Word.query.order_by(Word.date_published.desc()).limit(7)
+        num = str(words.count())
+    return render_template('word_bank.html', words=words, form=form, words_number=num)
 
 
-@app.route("/random")
-def random():
-    words = Word.query.all()
-    return render_template('word_bank.html', words=words)
+@app.route("/word_bank/search/<string:search_term>", methods=['GET', 'POST'])
+def word_bank_search(search_term):
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
+    all_words = Word.query.all()
+    words = [x for x in all_words
+                if search_term in x.word
+                or search_term in x.definition
+                or search_term in x.exampleSentence]
+    num = str(len(words))
+    return render_template('word_bank.html', words=words, form=form, words_number=num)
+
+
+@app.route("/word_bank/random")
+def word_bank_random():
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
+    else:
+        max = Word.query.count()
+        rand_int = random.randint(1, max + 1)
+        words = Word.query.filter_by(id=rand_int).all()
+        num = '1'
+    return render_template('word_bank.html', words=words, form=form, words_number=num)
+
+
+@app.route("/word_bank/user/<int:user_id>")
+def word_bank_user(user_id):
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
+    else:
+        words = Word.query.filter_by(user_id=user_id).all()
+        num = str(len(words))
+    return render_template('word_bank.html', words=words, form=form, words_number=num)
 
 
 @app.route("/about")
@@ -109,22 +147,35 @@ def account():
     return render_template('account.html', title='Account', image_file=image_file, form=form)
 
 
+@app.route("/admin")
+@login_required
+def admin():
+    today = datetime.date(datetime.now())
+    unpublished = Word.query.filter(Word.date_published == today or Word.date_published is None)
+    return render_template('admin.html', title='Admin', unpublished=unpublished)
+
+
 @app.route("/word/new", methods=['GET', 'POST'])
 @login_required
 def new_word():
     form = WordForm()
     if form.validate_on_submit():
-        word = Word(word=form.word.data
-                    , partOfSpeech=form.partOfSpeech.data
-                    , definition=form.definition.data
-                    , exampleSentence=form.exampleSentence.data
-                    , ipa=form.ipa.data
-                    , date_published=form.date_published.data
-                    , contributor=current_user)
-        db.session.add(word)
-        db.session.commit()
-        flash('Word added, you sot.', 'success')
-        return redirect(url_for('home'))
+        # duplicate check
+        dupe = Word.query.filter(Word.word == form.word.data and Word.partOfSpeech == form.partOfSpeech.data).first()
+        if dupe:
+            flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+        else:
+            word = Word(word=form.word.data
+                        , partOfSpeech=form.partOfSpeech.data
+                        , definition=form.definition.data
+                        , exampleSentence=form.exampleSentence.data
+                        , ipa=form.ipa.data
+                        , date_published=form.date_published.data
+                        , contributor=current_user)
+            db.session.add(word)
+            db.session.commit()
+            flash('Word added, you sot.', 'success')
+            return redirect(url_for('home'))
     return render_template('word_upsert.html', title='Add Word', form=form, legend='Add word')
 
 
@@ -142,16 +193,21 @@ def update_word(word_id):
         abort(403)
     form = WordForm()
     if form.validate_on_submit():
-        word.word = form.word.data
-        word.partOfSpeech = form.partOfSpeech.data
-        word.definition = form.definition.data
-        word.exampleSentence = form.exampleSentence.data
-        word.ipa = form.ipa.data
-        word.date_published = form.date_published.data
-        word.contributor = current_user
-        db.session.commit()
-        flash('Word updated, you miscreant.', 'success')
-        return redirect(url_for('word', word_id=word.id))
+        # duplicate check
+        dupe = Word.query.filter(Word.id != word.id, Word.word == form.word.data, Word.partOfSpeech == form.partOfSpeech.data).first()
+        if dupe:
+            flash(f'This word ({dupe.id}) was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+        else:
+            word.word = form.word.data
+            word.partOfSpeech = form.partOfSpeech.data
+            word.definition = form.definition.data
+            word.exampleSentence = form.exampleSentence.data
+            word.ipa = form.ipa.data
+            word.date_published = form.date_published.data
+            word.contributor = current_user
+            db.session.commit()
+            flash('Word updated, you miscreant.', 'success')
+            return redirect(url_for('word', word_id=word.id))
     elif request.method == 'GET':
         form.word.data = word.word
         form.partOfSpeech.data = word.partOfSpeech

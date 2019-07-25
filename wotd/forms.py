@@ -72,3 +72,9 @@ class WordForm(FlaskForm):
     ipa = StringField('IPA', validators=[DataRequired()])
     date_published = DateField('Publish Date', validators=[DataRequired()])
     submit = SubmitField('Post')
+
+
+class SearchForm(FlaskForm):
+    search_data = StringField('Search')#, validators=[DataRequired()])
+    submit = SubmitField('Post')
+

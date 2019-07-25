@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Unpublished</h1>
+    <table class="table">
+        <tr class="tr">
+            <th><h5 class="article-header">Word</h5></th>
+            <th><h5 class="article-header">Published</h5></th>
+            <th><h5 class="article-header">Pronunciation</h5></th>
+            <th><h5 class="article-header">Part of Speech</h5></th>
+            <th><h5 class="article-header">Definition</h5></th>
+            <th><h5 class="article-header">Example Sentence</h5></th>
+            <th><h5 class="article-header">Contributor</h5></th>
+        </tr>
+    {% for word in unpublished %}
+        <tr class="tr">
+            <!--<img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}"> -->
+            <th>
+                <b><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></b>
+            </th>
+            <th>
+                <small class="text-muted">{{ word.date_published }}</small>
+            </th>
+            <th>
+                {% if word.ipa %}
+                    <p class="article-content">{{ word.ipa }}</p>
+                {% else %}
+                    <p class="article-content"> </p>
+                {% endif %}
+            </th>
+            <th>
+                <p class="article-content">{{ word.partOfSpeech }}</p>
+            </th>
+            <th class="tbl-col-30">
+                <p class="article-content">{{ word.definition }}</p>
+            </th>
+            <th class="tbl-col-30">
+                <p class="article-content">{{ word.exampleSentence }}</p>
+            </th>
+            <th>
+                <a class="mr-2" href="#">{{ word.contributor.username }}</a>
+            </th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock content %}
