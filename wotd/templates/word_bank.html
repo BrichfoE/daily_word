@@ -1,34 +1,84 @@
 {% extends "layout.html" %}
 {% block content %}
-    <p>Word Bank</p>
-    <div class="grid-container">
-    {% for word in words %}
-        <article class="grid-item">
-            <!--<img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}"> -->
-            <div class="media-body">
-                <div class="article-metadata">
-                    <a class="mr-2" href="#">{{ word.contributor.username }}</a>
-                    <small class="text-muted">{{ word.date_published }}</small>
-                </div>
-                <h2><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></h2>
-                <div>
-                    <b>Part of speech:</b>
-                    <p class="article-content">{{ word.partOfSpeech }}</p>
-                    {% if word.ipa %}
-                        <b>Pronunciation:</b>
-                        <p class="article-content">{{ word.ipa }}</p>
+    <div>
+        <h1>Word Bank</h1>
+        {% if words_number == '1' %}
+            <p>1 word returned</p>
+        {% else %}
+            <p>{{ words_number + " words returned" }}</p>
+        {% endif %}
+    </div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                <div class="form-group col-md-8">
+                    {% if form.search_data.errors %}
+                        {{ form.search_data(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.word.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.search_data(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div>
-                    <p class="article-header">Definition: </p>
-                    <p class="article-content">{{ word.definition }}</p>
+                <div class="col-md-4">
+                    <a href="{{ url_for('word_bank_random') }}">Random</a>
+                    <a href="{{ url_for('word_bank') }}">Last 7 Words</a>
                 </div>
-                <div>
-                    <p class="article-header">Example Sentence: </p>
-                    <p class="article-content">{{ word.exampleSentence }}</p>
-                </div>
-            </div>
-        </article>
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+            </fieldset>
+        </form>
+    <table class="table">
+        <colgroup>
+            <col class="tbl-col-10" />
+            <col class="tbl-col-10" />
+            <col class="tbl-col-10" />
+            <col class="tbl-col-10" />
+            <col class="tbl-col-20" />
+            <col class="tbl-col-20" />
+            <col class="tbl-col-10" />
+        </colgroup>
+        <tr class="tr">
+            <th><h5 class="article-header">Word</h5></th>
+            <th><h5 class="article-header">Published</h5></th>
+            <th><h5 class="article-header">Pronunciation</h5></th>
+            <th><h5 class="article-header">Part of Speech</h5></th>
+            <th><h5 class="article-header">Definition</h5></th>
+            <th><h5 class="article-header">Example Sentence</h5></th>
+            <th><h5 class="article-header">Contributor</h5></th>
+        </tr>
+    {% for word in words %}
+        <tr class="tr">
+            <!--<img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}"> -->
+            <th>
+                <b><a class="article-content" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></b>
+            </th>
+            <th>
+                <small>{{ word.date_published }}</small>
+            </th>
+            <th>
+                {% if word.ipa %}
+                    <p>{{ word.ipa }}</p>
+                {% else %}
+                    <p> </p>
+                {% endif %}
+            </th>
+            <th>
+                <p>{{ word.partOfSpeech }}</p>
+            </th>
+            <th class="tbl-col-30">
+                <p>{{ word.definition }}</p>
+            </th>
+            <th class="tbl-col-30">
+                <p>{{ word.exampleSentence }}</p>
+            </th>
+            <th>
+                <a href="{{ url_for('word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
+            </th>
+        </tr>
     {% endfor %}
-    </div>
+    </table>
 {% endblock content %}

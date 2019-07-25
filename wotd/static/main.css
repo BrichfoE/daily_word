@@ -84,12 +84,27 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-.grid-container {
-  display: grid;
-  grid-gap: 100px 50px;
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.grid-item {
-  grid-row-start:1;
-  grid-row-end:3;
+.td, th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+.tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.tbl-col-10 {
+    width: 10%;
+}
+
+.tbl-col-20 {
+    width: 20%;
 }
