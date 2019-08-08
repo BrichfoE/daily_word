@@ -108,3 +108,11 @@ a.article-title:hover {
 .tbl-col-20 {
     width: 20%;
 }
+
+.field-label {
+    text-align: left;
+}
+
+.field-input {
+    text-align: right;
+}

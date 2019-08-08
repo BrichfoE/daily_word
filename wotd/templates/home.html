@@ -2,16 +2,26 @@
 {% block content %}
     <article class="media content-section">
         {% if word.word %}
-        <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}">
-        <div class="media-body">
+            {% if word.contributor %}
+                <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}">
+            {% else %}
+                <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/default.jpg') }}">
+            {% endif %}
+            <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="#">{{ word.contributor.username }}</a>
+                    {% if word.contributor %}
+                        <a class="mr-2" href="#">{{ word.contributor.username }}</a>
+                    {% else %}
+                        <p class="mr-2">Anonymous</p>
+                    {% endif %}
                     <small class="text-muted">{{ word.date_published }}</small>
                 </div>
                 <h2><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></h2>
                 <div>
                     <b>Part of speech:</b>
-                    <p class="article-content">{{ word.partOfSpeech }}</p>
+                    <p class="article-content">{{ word.part_o_speech.partOfSpeech }}</p>
+                </div>
+                <div>
                     {% if word.ipa %}
                         <b>Pronunciation:</b>
                         <p class="article-content">{{ word.ipa }}</p>
@@ -25,7 +35,7 @@
                     <p class="article-header">Example Sentence: </p>
                     <p class="article-content">{{ word.exampleSentence }}</p>
                 </div>
-        </div>
+            </div>
         {% else %}
             <div class="article-metadata">
                 <a class="mr-2" href="#">No word!</a>

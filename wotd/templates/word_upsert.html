@@ -4,33 +4,69 @@
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">{{ legend }}</legend>
-                <div class="form-group">
-                    {{ form.word.label(class="form-control-label") }}
-                    {% if form.word.errors %}
-                        {{ form.word(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.word.errors %}
-                                <span> {{ error }} </span>
-                            {% endfor %}
+                <div class="container">
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.word.label(class="form-control-label") }}
+                                {% if form.word.errors %}
+                                    {{ form.word(class="is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.word.errors %}
+                                            <span> {{ error }} </span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.word() }}
+                                {% endif %}
+                            </div>
                         </div>
-                    {% else %}
-                        {{ form.word(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.partOfSpeech.label(class="form-control-label") }}
-                    {% if form.partOfSpeech.errors %}
-                        {{ form.partOfSpeech(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.partOfSpeech.errors %}
-                                <span> {{ error }} </span>
-                            {% endfor %}
+                        <div class="col-md-6" class="form-group">
+                            <div>
+                                {{ form.part_o_speech.label(class="form-control-label") }}
+                                {% if form.part_o_speech.errors %}
+                                    {{ form.part_o_speech(class="is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.part_o_speech.errors %}
+                                            <span> {{ error }} </span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.part_o_speech() }}
+                                {% endif %}
+                            </div>
                         </div>
-                    {% else %}
-                        {{ form.partOfSpeech(class="form-control form-control-lg") }}
-                    {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div>
+                                {{ form.date_published.label(class="form-control-label") }}
+                                {% if user.isAdmin %}
+                                    {{ form.date_published() }}
+                                {% else %}
+                                    {{ form.date_published(disabled="disabled") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                {{ form.ipa.label(class="form-control-label") }}
+                                {% if form.ipa.errors %}
+                                    {{ form.ipa(class="is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.ipa.errors %}
+                                            <span> {{ error }} </span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.ipa() }}
+                                {% endif %}
+                             </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="form-group">
                     {{ form.definition.label(class="form-control-label") }}
                     {% if form.definition.errors %}
@@ -55,32 +91,6 @@
                         </div>
                     {% else %}
                         {{ form.exampleSentence(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.ipa.label(class="form-control-label") }}
-                    {% if form.ipa.errors %}
-                        {{ form.ipa(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.ipa.errors %}
-                                <span> {{ error }} </span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.ipa(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.date_published.label(class="form-control-label") }}
-                    {% if form.date_published.errors %}
-                        {{ form.date_published(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.date_published.errors %}
-                                <span> {{ error }} </span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.date_published(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
             </fieldset>

@@ -5,8 +5,10 @@
             <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ word.contributor.username }}</a>
-              <small class="text-muted">{{ word.date_published.strftime('%Y-%m-%d') }}</small>
-                {% if word.contributor == current_user %}
+              {% if word.date_published %}
+                <small class="text-muted">{{ word.date_published.strftime('%Y-%m-%d') }}</small>
+              {% endif %}
+                {% if word.contributor == current_user or current_user.isAdmin %}
                 <div>
                     <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('update_word', word_id=word.id) }}">Update</a>
                     <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>

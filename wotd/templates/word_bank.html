@@ -67,7 +67,7 @@
                 {% endif %}
             </th>
             <th>
-                <p>{{ word.partOfSpeech }}</p>
+                <p>{{ word.part_o_speech.partOfSpeech }}</p>
             </th>
             <th class="tbl-col-30">
                 <p>{{ word.definition }}</p>
@@ -76,7 +76,11 @@
                 <p>{{ word.exampleSentence }}</p>
             </th>
             <th>
-                <a href="{{ url_for('word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
+                {% if word.contributor %}
+                    <a href="{{ url_for('word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
+                {% else %}
+                    <p>Anonymous</p>
+                {% endif %}
             </th>
         </tr>
     {% endfor %}
