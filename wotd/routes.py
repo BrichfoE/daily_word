@@ -5,8 +5,8 @@ from datetime import datetime
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from wotd import app, db, flask_bcrypt
-from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WordForm, SearchForm
-from wotd.models import User, Post, Word
+from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm #, PostForm
+from wotd.models import User, Word#, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -151,78 +151,103 @@ def account():
 @login_required
 def admin():
     today = datetime.date(datetime.now())
-    unpublished = Word.query.filter(Word.date_published == today or Word.date_published is None)
+    unpublished = Word.query.filter(Word.date_published == None).all()
     return render_template('admin.html', title='Admin', unpublished=unpublished)
-
-
-@app.route("/word/new", methods=['GET', 'POST'])
-@login_required
-def new_word():
-    form = WordForm()
-    if form.validate_on_submit():
-        # duplicate check
-        dupe = Word.query.filter(Word.word == form.word.data and Word.partOfSpeech == form.partOfSpeech.data).first()
-        if dupe:
-            flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
-        else:
-            word = Word(word=form.word.data
-                        , partOfSpeech=form.partOfSpeech.data
-                        , definition=form.definition.data
-                        , exampleSentence=form.exampleSentence.data
-                        , ipa=form.ipa.data
-                        , date_published=form.date_published.data
-                        , contributor=current_user)
-            db.session.add(word)
-            db.session.commit()
-            flash('Word added, you sot.', 'success')
-            return redirect(url_for('home'))
-    return render_template('word_upsert.html', title='Add Word', form=form, legend='Add word')
 
 
 @app.route("/word/<int:word_id>")
 def word(word_id):
     word = Word.query.get_or_404(word_id)
-    return render_template('word.html', title=word.word, word=word)
+    return render_template('word.html', title=word.word, word=word, user=current_user)
+
+
+@app.route("/word/new", methods=['GET', 'POST'])
+def new_word():
+    form = WordForm()
+    form.get_parts_of_speech()
+    if form.validate_on_submit():
+        if form.part_o_speech.data == -1:
+            flash(f'Please choose a part of speech.', 'fail')
+        else:
+            dupe = Word.query.filter(Word.word == form.word.data
+                                     and Word.partOfSpeech_id == form.part_o_speech.data).first()
+            if dupe:
+                flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+            else:
+                if current_user.is_authenticated:
+                    user = current_user
+                else:
+                    user = User.query.filter(User.id == 0).first()
+                word = Word(word=form.word.data
+                            , partOfSpeech_id=form.part_o_speech.data
+                            , definition=form.definition.data
+                            , exampleSentence=form.exampleSentence.data
+                            , ipa=form.ipa.data
+                            , date_published=form.date_published.data
+                            , contributor=user)
+                db.session.add(word)
+                db.session.commit()
+                flash('Word added, you sot.', 'success')
+                return redirect(url_for('home'))
+    return render_template('word_upsert.html'
+                           , title='Add Word'
+                           , form=form
+                           , legend='Add word'
+                           , user=current_user)
 
 
 @app.route("/word/<int:word_id>/update", methods=['GET', 'POST'])
 @login_required
 def update_word(word_id):
     word = Word.query.get_or_404(word_id)
-    if word.contributor != current_user and current_user.isAdmin:
+    if word.contributor != current_user and current_user.isAdmin is False:
         abort(403)
     form = WordForm()
+    form.get_parts_of_speech()
+    flash(f'word thing {word.part_o_speech}', 'success')
+    flash(f'form thing {form.part_o_speech.data}', 'success')
     if form.validate_on_submit():
-        # duplicate check
-        dupe = Word.query.filter(Word.id != word.id, Word.word == form.word.data, Word.partOfSpeech == form.partOfSpeech.data).first()
-        if dupe:
-            flash(f'This word ({dupe.id}) was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+        if form.part_o_speech.data == -1:
+            flash('Please choose part of speech', 'fail')
         else:
-            word.word = form.word.data
-            word.partOfSpeech = form.partOfSpeech.data
-            word.definition = form.definition.data
-            word.exampleSentence = form.exampleSentence.data
-            word.ipa = form.ipa.data
-            word.date_published = form.date_published.data
-            word.contributor = current_user
-            db.session.commit()
-            flash('Word updated, you miscreant.', 'success')
-            return redirect(url_for('word', word_id=word.id))
+            dupe = Word.query.filter(Word.id != word.id
+                                     , Word.word == form.word.data
+                                     , Word.partOfSpeech_id == form.part_o_speech.data).first()
+            if dupe:
+                flash(f'This word ({dupe.id}) was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.'
+                      , 'fail')
+            else:
+                word.word = form.word.data
+                word.partOfSpeech_id = form.part_o_speech.data
+                word.definition = form.definition.data
+                word.exampleSentence = form.exampleSentence.data
+                word.ipa = form.ipa.data
+                word.date_published = form.date_published.data
+                word.contributor = current_user
+                db.session.commit()
+                flash('Word updated, you miscreant.', 'success')
+                return redirect(url_for('word', word_id=word.id))
+    elif form.is_submitted() and form.validate() is False:
+        flash(f'this form failed', 'success')
     elif request.method == 'GET':
         form.word.data = word.word
-        form.partOfSpeech.data = word.partOfSpeech
+        form.part_o_speech.data = word.partOfSpeech_id
         form.definition.data = word.definition
         form.exampleSentence.data = word.exampleSentence
         form.ipa.data = word.ipa
         form.date_published.data = word.date_published
-    return render_template('word_upsert.html', title='Update ' + word.word, form=form, legend='Update Word')
+    return render_template('word_upsert.html'
+                           , title='Update ' + word.word
+                           , form=form
+                           , legend='Update Word'
+                           , user=current_user)
 
 
 @app.route("/word/<int:word_id>/delete", methods=['GET', 'POST'])
 @login_required
 def delete_word(word_id):
     word = Word.query.get_or_404(word_id)
-    if word.contributor != current_user:
+    if word.contributor != current_user and current_user.isAdmin:
         abort(403)
     db.session.delete(word)
     db.session.commit()
@@ -230,6 +255,8 @@ def delete_word(word_id):
     return redirect(url_for('home'))
 
 
+'''
+#may come back to add in commenting functions later on
 @app.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
@@ -240,7 +267,7 @@ def new_post():
         db.session.commit()
         flash('Post created, you sot.', 'success')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post', form=form, legend='Create Post')
+    return render_template('create_post.html', title='New Post', form=form, legend='Create Post', user=current_user)
 
 
 @app.route("/post/<int:post_id>")
@@ -278,3 +305,4 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted, the poor thing.', 'success')
     return redirect(url_for('home'))
+'''
