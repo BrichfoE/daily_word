@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Attach File</h1>
+<form method="POST" action="" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+                {{ form.hidden_tag() }}
+                <div class="col-md-4">
+                    {{ form.file.label() }}
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form.file(class="form-control-file") }}
+                        {% if form.file.errors %}
+                            {% for error in form.file.errors %}
+                                 <span class="text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            <div class="col-md-4">
+                <div class="form-group" align="right">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<h1>Upload Results</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <table>
+                    <tr><h3>{{ add_count }}</h3></tr>
+                {% for addition in results[0] %}
+                    <tr>
+                        <th>{{ addition }}</th>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-8">
+                <table>
+                    <tr><h3>{{ error_count }}</h3></tr>
+                {% for error in results[1] %}
+                    <tr>
+                        <th>{{ error.key }} </th>
+                        <th>{{ error.error }}</th>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

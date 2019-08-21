@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Message from the creator</h1>
-    <p>By popular demand, this totally unique idea that no one has ever implemented before is now publicly available.</p>
+    {% if content %}
+        <h1>{{ content.title }}</h1>
+        <p>{{ content.content }}</p>
+    {% else %}
+        <h1>Message from the creator</h1>
+        <p>By popular demand, this totally unique idea that no one has ever implemented before is now publicly available.</p>
+    {% endif %}
 {% endblock content %}

@@ -1838,15 +1838,5 @@
     "ipa": "╦êer╔Önt",
     "partOfSpeech": 1,
     "exampleSentence": "Yesterday's example sentence regarding BAs was arrant nonsense!"
-  },
-  "cat": {
-    "Identifier": 185,
-    "word": "cat",
-    "date_added": "2019-04-02T00:00:00",
-    "date_published": "2019-04-03T00:00:00",
-    "definition": "feline",
-    "ipa": "kat",
-    "partOfSpeech": 1,
-    "exampleSentence": "Add-a-cat!"
   }
 }
