@@ -5,8 +5,9 @@ from datetime import datetime
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from wotd import app, db, flask_bcrypt
-from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm #, PostForm
-from wotd.models import User, Word#, Post
+from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm, AdminAccountForm, FileForm, ContentForm #, PostForm
+from wotd.models import User, Word, Content#, Post
+from wotd.import_file import import_file
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -39,10 +40,12 @@ def word_bank_search(search_term):
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     all_words = Word.query.all()
+    search_term = search_term.lower()
     words = [x for x in all_words
-                if search_term in x.word
-                or search_term in x.definition
-                or search_term in x.exampleSentence]
+                if (search_term in x.word.lower()
+                or search_term in x.definition.lower()
+                or search_term in x.exampleSentence.lower())
+                and x.date_published is not None]
     num = str(len(words))
     return render_template('word_bank.html', words=words, form=form, words_number=num)
 
@@ -73,7 +76,60 @@ def word_bank_user(user_id):
 
 @app.route("/about")
 def about():
-    return render_template('about.html', title='About')
+    active = Content.query.filter_by(isActive=True).first()
+    return render_template('about.html', title='About', content=active)
+
+
+@app.route("/content/new", methods=['GET', 'POST'])
+@login_required
+def content_new():
+    if current_user.isAdmin is False:
+        return redirect(url_for('home'))
+    else:
+        form = ContentForm()
+        if form.validate_on_submit():
+            new_content = Content(
+                title=form.title.data
+                , private_title=form.private_title.data
+                , content=form.content.data
+                , isActive=form.isActive.data
+            )
+            if new_content.isActive is True:
+                active = Content.query.filter_by(isActive=True).first()
+                if active is not None:
+                    active.isActive = False
+            db.session.add(new_content)
+            db.session.commit()
+            flash(f'{new_content.title} added!  Content is King!  That or Gidorah is King.  Either Or.', 'success')
+            return redirect('admin')
+    return render_template('content_upsert.html', title='Update Content', form=form)
+
+
+@app.route("/content/update/<int:content_id>", methods=['GET', 'POST'])
+@login_required
+def content_update(content_id):
+    if current_user.isAdmin is False:
+        return redirect(url_for('home'))
+    form = ContentForm()
+    content = Content.query.filter_by(id=content_id).first()
+    if form.validate_on_submit():
+        if form.isActive.data is True:
+            active = Content.query.filter_by(isActive=True).first()
+            if active is not None:
+                active.isActive = False
+        content.title = form.title.data
+        content.private_title = form.private_title.data
+        content.content = form.content.data
+        content.isActive = form.isActive.data
+        db.session.commit()
+        flash('Content updated, now be content!', 'success')
+        return redirect(url_for('admin'))
+    elif request.method == 'GET':
+        form.title.data = content.title
+        form.private_title.data = content.private_title
+        form.content.data = content.content
+        form.isActive.data = content.isActive
+    return render_template('content_upsert.html', title='Update Content', form=form)
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -113,14 +169,24 @@ def logout():
     return redirect(url_for('home'))
 
 
-def save_picture(form_picture):
+def save_file(form_file, folder_name):
     random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_picture.filename)
+    _, f_ext = os.path.splitext(form_file.filename)
+    file_fn = random_hex + f_ext
+    file_path = os.path.join(app.root_path, 'static', folder_name, file_fn)
+    form_file.save(file_path)
+
+    return file_path
+
+
+def save_picture(form_file, folder_name):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_file.filename)
     picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
+    picture_path = os.path.join(app.root_path, 'static', folder_name, picture_fn)
 
     output_size = (125, 125)
-    i = Image.open(form_picture)
+    i = Image.open(form_file)
     i.thumbnail(output_size)
     i.save(picture_path)
 
@@ -133,7 +199,7 @@ def account():
     form = UpdateAccountForm()
     if form.validate_on_submit():
         if form.picture.data:
-            picture_file = save_picture(form.picture.data)
+            picture_file = save_picture(form.picture.data, 'profile_pics')
             current_user.image_file = picture_file
         current_user.username = form.username.data
         current_user.email = form.email.data
@@ -144,15 +210,97 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
-    return render_template('account.html', title='Account', image_file=image_file, form=form)
+    return render_template('account.html', title='Account', image_file=image_file, form=form, adminView=False)
 
 
-@app.route("/admin")
+@app.route("/account/admin/<int:user_id>", methods=['GET', 'POST'])
+@login_required
+def account_admin(user_id):
+    if current_user.isAdmin is False:
+        return redirect(url_for('home'))
+    form = AdminAccountForm()
+    user = User.query.filter(User.id == user_id).first()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data, 'profile_pics')
+            user.image_file = picture_file
+        user.username = form.username.data
+        user.email = form.email.data
+        user.isAdmin = form.isAdmin.data
+        db.session.commit()
+        flash('Your account has been updated.', 'success')
+        return redirect(url_for('admin_search', search_term=user.email))
+    elif request.method == 'GET':
+        form.username.data = user.username
+        form.email.data = user.email
+        form.isAdmin.data = user.isAdmin
+    image_file = url_for('static', filename='profile_pics/' + user.image_file)
+    default = url_for('static', filename='default.jpg')
+    return render_template('account.html'
+                           , title='Account - Admin'
+                           , image_file=image_file
+                           , image_default=default
+                           , form=form
+                           , adminView=True)
+
+
+@app.route("/admin", methods=['GET', 'POST'])
 @login_required
 def admin():
+    if current_user.isAdmin is False:
+        return redirect(url_for('home'))
+    content = Content.query.filter_by(isActive=True).first()
+    if content is None:
+        cid = 0
+    else:
+        cid = content.id
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('admin_search', search_term=form.search_data.data))
     today = datetime.date(datetime.now())
-    unpublished = Word.query.filter(Word.date_published == None).all()
-    return render_template('admin.html', title='Admin', unpublished=unpublished)
+    words = Word.query.order_by(Word.date_published.desc()).all()
+    future = [x for x in words if x.date_published == None or x.date_published > today]
+    users = User.query.all()
+    return render_template('admin.html'
+                           , title='Admin'
+                           , unpublished=future
+                           , words=words
+                           , users=users
+                           , form=form
+                           , content_id=cid)
+
+
+@app.route("/admin/search/<string:search_term>", methods=['GET', 'POST'])
+def admin_search(search_term):
+    if current_user.isAdmin is False:
+        return redirect(url_for('home'))
+    content = Content.query.filter_by(isActive=True).first()
+    if content is None:
+        cid = 0
+    else:
+        cid = content.id
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('admin_search', search_term=form.search_data.data))
+    search_term = search_term.lower()
+    today = datetime.date(datetime.now())
+    all_words = Word.query.all()
+    words = [x for x in all_words
+                if search_term in x.word.lower()
+                or search_term in x.definition.lower()
+                or search_term in x.exampleSentence.lower()]
+    future = [x for x in words if x.date_published == None or x.date_published > today]
+    all_users = User.query.all()
+    users = [y for y in all_users
+                if search_term in y.username.lower()
+                or search_term in y.email.lower()]
+    return render_template('admin.html'
+                           , title='Admin'
+                           , unpublished=future
+                           , words=words
+                           , users=users
+                           , form=form
+                           , content_id=cid)
 
 
 @app.route("/word/<int:word_id>")
@@ -204,8 +352,6 @@ def update_word(word_id):
         abort(403)
     form = WordForm()
     form.get_parts_of_speech()
-    flash(f'word thing {word.part_o_speech}', 'success')
-    flash(f'form thing {form.part_o_speech.data}', 'success')
     if form.validate_on_submit():
         if form.part_o_speech.data == -1:
             flash('Please choose part of speech', 'fail')
@@ -223,7 +369,6 @@ def update_word(word_id):
                 word.exampleSentence = form.exampleSentence.data
                 word.ipa = form.ipa.data
                 word.date_published = form.date_published.data
-                word.contributor = current_user
                 db.session.commit()
                 flash('Word updated, you miscreant.', 'success')
                 return redirect(url_for('word', word_id=word.id))
@@ -247,12 +392,33 @@ def update_word(word_id):
 @login_required
 def delete_word(word_id):
     word = Word.query.get_or_404(word_id)
-    if word.contributor != current_user and current_user.isAdmin:
+    if word.contributor != current_user and current_user.isAdmin is False:
         abort(403)
     db.session.delete(word)
     db.session.commit()
     flash('Your word has been deleted, the poor thing.', 'success')
     return redirect(url_for('home'))
+
+
+@app.route("/import_words", methods=['GET', 'POST'])
+@login_required
+def import_words():
+    if current_user.isAdmin is False:
+        return redirect(url_for('home'))
+    form = FileForm()
+    results = [], []
+    if form.validate_on_submit():
+        if form.file.data:
+            file_path = save_file(form.file.data, 'import_files')
+            results = import_file(file_path)
+    add_count = 'Additions (' + str(len(results[0])) + ')'
+    error_count = 'Errors (' + str(len(results[1])) + ')'
+    return render_template('upload.html'
+                           , title='Upload a File'
+                           , form=form
+                           , results=results
+                           , add_count=add_count
+                           , error_count=error_count)
 
 
 '''

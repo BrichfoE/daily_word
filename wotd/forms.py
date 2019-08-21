@@ -3,7 +3,7 @@ from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, DateField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Optional
-from wotd.models import User, PartOfSpeech
+from wotd.models import User, PartOfSpeech, Content
 
 
 class RegistrationForm(FlaskForm):
@@ -37,11 +37,17 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 
+class AdminAccountForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
+    isAdmin = BooleanField('Is Admin', validators=[Optional()])
+    submit = SubmitField('Update Account')
+
+
 class UpdateAccountForm(FlaskForm):
-    username = StringField('Username',
-                           validators=[DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email',
-                        validators=[DataRequired(), Email()])
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Update Account')
 
@@ -74,6 +80,19 @@ class WordForm(FlaskForm):
 class SearchForm(FlaskForm):
     search_data = StringField('Search')
     submit = SubmitField('Search')
+
+
+class FileForm(FlaskForm):
+    file = FileField('Upload Words', validators=[FileAllowed(['txt'])])
+    submit = SubmitField('Upload')
+
+
+class ContentForm(FlaskForm):
+    private_title = StringField('Admin Title', validators=[DataRequired()])
+    title = StringField('Public Title', validators=[DataRequired()])
+    content = TextAreaField('Content Text', validators=[DataRequired()])
+    isActive = BooleanField('Is displayed status')
+    submit = SubmitField('Upsert')
 
 
 '''

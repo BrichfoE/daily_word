@@ -47,6 +47,14 @@ class Word(db.Model):
         return f"Word('{self.word}', '{self.part_o_speech}', '{self.contributor}')"#", ''{self.date_published.strftime('%Y-%m-%d')}')"
 
 
+class Content(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    private_title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    isActive = db.Column(db.Boolean, nullable=False, default=False)
+
+
 '''
 #may come back to allow commenting in-app later on
 class Post(db.Model):
