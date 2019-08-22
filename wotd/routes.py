@@ -11,16 +11,19 @@ from wotd.import_file import import_file
 from flask_login import login_user, current_user, logout_user, login_required
 
 
-@app.route("/")
-@app.route("/home")
+@app.route("/", methods=['GET', 'POST'])
+@app.route("/home", methods=['GET', 'POST'])
 def home():
     today = datetime.date(datetime.now())
-    if Word.query.filter(Word.date_published == today).count() > 0:
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
+    elif Word.query.filter(Word.date_published == today).count() > 0:
         word = Word.query.filter(Word.date_published == today).first()
     else:
         word = Word()
         word.date_published = datetime.now().date()
-    return render_template('home.html', word=word)
+    return render_template('home.html', word=word, form=form)
 
 
 @app.route("/word_bank", methods=['GET', 'POST'])
