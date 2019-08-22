@@ -17,16 +17,20 @@
                     <small class="text-muted">{{ word.date_published }}</small>
                 </div>
                 <h2><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></h2>
+                <div class="container">
+                    <div class="row article-metadata">
+                        <div class="col-md-6">
+                            <b>Part of speech:</b>
+                            <p class="article-content">{{ word.part_o_speech.partOfSpeech }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            {% if word.ipa %}
+                                <b>Pronunciation:</b>
+                                <p class="article-content">{{ word.ipa }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
                 <div>
-                    <b>Part of speech:</b>
-                    <p class="article-content">{{ word.part_o_speech.partOfSpeech }}</p>
-                </div>
-                <div>
-                    {% if word.ipa %}
-                        <b>Pronunciation:</b>
-                        <p class="article-content">{{ word.ipa }}</p>
-                    {% endif %}
-                </div>
                 <div>
                     <p class="article-header">Definition: </p>
                     <p class="article-content">{{ word.definition }}</p>

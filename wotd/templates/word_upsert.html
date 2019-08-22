@@ -7,62 +7,62 @@
                 <div class="container">
                     <legend class="border-bottom mb-4">{{ legend }}</legend>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                {{ form.word.label(class="form-control-label") }}
-                                {% if form.word.errors %}
-                                    {{ form.word(class="is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.word.errors %}
-                                            <span> {{ error }} </span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.word() }}
-                                {% endif %}
-                            </div>
+                        <div class="col-md-2 form-group form-inline">
+                            {{ form.word.label(class="form-control-label") }}
                         </div>
-                        <div class="col-md-6" class="form-group">
-                            <div>
-                                {{ form.part_o_speech.label(class="form-control-label") }}
-                                {% if form.part_o_speech.errors %}
-                                    {{ form.part_o_speech(class="is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.part_o_speech.errors %}
-                                            <span> {{ error }} </span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.part_o_speech() }}
-                                {% endif %}
-                            </div>
+                        <div class="col-md-4 form-group form-inline">
+                            {% if form.word.errors %}
+                                {{ form.word(class="is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.word.errors %}
+                                        <span> {{ error }} </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.word() }}
+                            {% endif %}
+                        </div>
+                        <div class="col-md-2 form-group form-inline">
+                            {{ form.part_o_speech.label(class="form-control-label") }}
+                        </div>
+                        <div class="col-md-4 form-group form-inline">
+                            {% if form.part_o_speech.errors %}
+                                {{ form.part_o_speech(class="is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.part_o_speech.errors %}
+                                        <span> {{ error }} </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.part_o_speech() }}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <div>
-                                {{ form.date_published.label(class="form-control-label") }}
-                                {% if user.isAdmin %}
-                                    {{ form.date_published() }}
-                                {% else %}
-                                    {{ form.date_published(disabled="disabled") }}
-                                {% endif %}
-                            </div>
+                        <div class="col-md-2 form-group form-inline">
+                            {{ form.date_published.label(class="form-control-label") }}
                         </div>
-                        <div class="form-group col-md-6">
-                            <div>
-                                {{ form.ipa.label(class="form-control-label") }}
-                                {% if form.ipa.errors %}
-                                    {{ form.ipa(class="is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.ipa.errors %}
-                                            <span> {{ error }} </span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.ipa() }}
-                                {% endif %}
-                             </div>
+                        <div class="col-md-4 form-group form-inline">
+                            {% if user.isAdmin %}
+                                {{ form.date_published() }}
+                            {% else %}
+                                {{ form.date_published(disabled="disabled") }}
+                            {% endif %}
+                        </div>
+                        <div class="col-md-2 form-group form-inline">
+                            {{ form.ipa.label(class="form-control-label") }}
+                        </div>
+                        <div class="col-md-4 form-group form-inline">
+                            {% if form.ipa.errors %}
+                                {{ form.ipa(class="is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.ipa.errors %}
+                                        <span> {{ error }} </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.ipa() }}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
