@@ -1,5 +1,43 @@
 {% extends "layout.html" %}
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>BrichWord of the Day</h1>
+            </div>
+            <div class="col-md-5">
+                <a href="{{ url_for('word_bank_random') }}">Random Word</a>
+                <a href="{{ url_for('word_bank') }}"> | Last 7 Words</a>
+                <a href="{{ url_for('word_bank_search', search_term=' ') }}"> | All Words</a>
+            </div>
+        </div>
+        <div class="row">
+            <form method="POST" action="" class="col-md-12 input-group">
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                <div class="form-group col-md-10">
+                    {{ form.hidden_tag() }}
+                    <fieldset >
+                        <div>
+                            {% if form.search_data.errors %}
+                                {{ form.search_data(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.search_data.errors %}
+                                        <span> {{ error }} </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.search_data(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group col-md-2">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+            </form>
+        </div>
+    </div>
     <article class="media content-section">
         {% if word.word %}
             {% if word.contributor %}
@@ -10,23 +48,27 @@
             <div class="media-body">
                 <div class="article-metadata">
                     {% if word.contributor %}
-                        <a class="mr-2" href="#">{{ word.contributor.username }}</a>
+                        <a class="mr-2" href="{{ url_for('word_bank_user', user_id = word.user_id ) }}">{{ word.contributor.username }}</a>
                     {% else %}
                         <p class="mr-2">Anonymous</p>
                     {% endif %}
                     <small class="text-muted">{{ word.date_published }}</small>
                 </div>
                 <h2><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></h2>
+                <div class="container">
+                    <div class="row article-metadata">
+                        <div class="col-md-6">
+                            <b>Part of speech:</b>
+                            <p class="article-content">{{ word.part_o_speech.partOfSpeech }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            {% if word.ipa %}
+                                <b>Pronunciation:</b>
+                                <p class="article-content">{{ word.ipa }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
                 <div>
-                    <b>Part of speech:</b>
-                    <p class="article-content">{{ word.part_o_speech.partOfSpeech }}</p>
-                </div>
-                <div>
-                    {% if word.ipa %}
-                        <b>Pronunciation:</b>
-                        <p class="article-content">{{ word.ipa }}</p>
-                    {% endif %}
-                </div>
                 <div>
                     <p class="article-header">Definition: </p>
                     <p class="article-content">{{ word.definition }}</p>

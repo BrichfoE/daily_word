@@ -1,36 +1,48 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div>
-        <h1>Word Bank</h1>
-        {% if words_number == '1' %}
-            <p>1 word returned</p>
-        {% else %}
-            <p>{{ words_number + " words returned" }}</p>
-        {% endif %}
-    </div>
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Word Bank</h1>
+                {% if words_number == '1' %}
+                    <p>1 word returned</p>
+                {% else %}
+                    <p>{{ words_number + " words returned" }}</p>
+                {% endif %}
+            </div>
+            <div class="col-md-5">
+                    <a href="{{ url_for('word_bank_random') }}">Random Word</a>
+                    <a href="{{ url_for('word_bank') }}"> | Last 7 Words</a>
+                    <a href="{{ url_for('word_bank_search', search_term=' ') }}"> | All Words</a>
+            </div>
+        </div>
+        <div class="row">
+            <form method="POST" action="" class="col-md-12 input-group">
                 <legend class="border-bottom mb-4">{{ legend }}</legend>
-                <div class="form-group col-md-8">
-                    {% if form.search_data.errors %}
-                        {{ form.search_data(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.word.errors %}
-                                <span> {{ error }} </span>
-                            {% endfor %}
+                <div class="form-group col-md-10">
+                    {{ form.hidden_tag() }}
+                    <fieldset >
+                        <div>
+                            {% if form.search_data.errors %}
+                                {{ form.search_data(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.search_data.errors %}
+                                        <span> {{ error }} </span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.search_data(class="form-control form-control-lg") }}
+                            {% endif %}
                         </div>
-                    {% else %}
-                        {{ form.search_data(class="form-control form-control-lg") }}
-                    {% endif %}
+                    </fieldset>
                 </div>
-                <div class="col-md-4">
-                    <a href="{{ url_for('word_bank_random') }}">Random</a>
-                    <a href="{{ url_for('word_bank') }}">Last 7 Words</a>
+                <div class="form-group col-md-2">
+                    {{ form.submit(class="btn btn-outline-info") }}
                 </div>
                 <legend class="border-bottom mb-4">{{ legend }}</legend>
-            </fieldset>
-        </form>
+            </form>
+        </div>
+    </div>
     <table class="table">
         <colgroup>
             <col class="tbl-col-10" />

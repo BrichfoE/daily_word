@@ -5,22 +5,25 @@ from datetime import datetime
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from wotd import app, db, flask_bcrypt
-from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm, AdminAccountForm, FileForm, ContentForm #, PostForm
-from wotd.models import User, Word, Content#, Post
+from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm, AdminAccountForm, FileForm, ContentForm
+from wotd.models import User, Word, Content
 from wotd.import_file import import_file
 from flask_login import login_user, current_user, logout_user, login_required
 
 
-@app.route("/")
-@app.route("/home")
+@app.route("/", methods=['GET', 'POST'])
+@app.route("/home", methods=['GET', 'POST'])
 def home():
     today = datetime.date(datetime.now())
-    if Word.query.filter(Word.date_published == today).count() > 0:
+    form = SearchForm()
+    if form.validate_on_submit and form.search_data.data is not None:
+        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
+    elif Word.query.filter(Word.date_published == today).count() > 0:
         word = Word.query.filter(Word.date_published == today).first()
     else:
         word = Word()
         word.date_published = datetime.now().date()
-    return render_template('home.html', word=word)
+    return render_template('home.html', word=word, form=form)
 
 
 @app.route("/word_bank", methods=['GET', 'POST'])
@@ -31,7 +34,7 @@ def word_bank():
     else:
         words = Word.query.order_by(Word.date_published.desc()).limit(7)
         num = str(words.count())
-    return render_template('word_bank.html', words=words, form=form, words_number=num)
+    return render_template('word_bank.html', title='Word Bank', words=words, form=form, words_number=num)
 
 
 @app.route("/word_bank/search/<string:search_term>", methods=['GET', 'POST'])
@@ -39,7 +42,7 @@ def word_bank_search(search_term):
     form = SearchForm()
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
-    all_words = Word.query.all()
+    all_words = Word.query.order_by(Word.word).all()
     search_term = search_term.lower()
     words = [x for x in all_words
                 if (search_term in x.word.lower()
@@ -57,8 +60,10 @@ def word_bank_random():
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
         max = Word.query.count()
-        rand_int = random.randint(1, max + 1)
-        words = Word.query.filter_by(id=rand_int).all()
+        words = [Word()]
+        while words[0].date_published is None:
+            rand_int = random.randint(1, max + 1)
+            words = Word.query.filter_by(id=rand_int).all()
         num = '1'
     return render_template('word_bank.html', words=words, form=form, words_number=num)
 
@@ -69,7 +74,8 @@ def word_bank_user(user_id):
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
-        words = Word.query.filter_by(user_id=user_id).all()
+        all_words = Word.query.filter_by(user_id=user_id).order_by(Word.word).all()
+        words = [x for x in all_words if x.date_published is not None]
         num = str(len(words))
     return render_template('word_bank.html', words=words, form=form, words_number=num)
 
@@ -258,13 +264,12 @@ def admin():
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('admin_search', search_term=form.search_data.data))
     today = datetime.date(datetime.now())
-    words = Word.query.order_by(Word.date_published.desc()).all()
-    future = [x for x in words if x.date_published == None or x.date_published > today]
+    all_words = Word.query.order_by(Word.date_published.desc()).all()
+    future = [x for x in all_words if x.date_published == None or x.date_published > today]
     users = User.query.all()
     return render_template('admin.html'
                            , title='Admin'
                            , unpublished=future
-                           , words=words
                            , users=users
                            , form=form
                            , content_id=cid)
@@ -285,11 +290,12 @@ def admin_search(search_term):
     search_term = search_term.lower()
     today = datetime.date(datetime.now())
     all_words = Word.query.all()
-    words = [x for x in all_words
-                if search_term in x.word.lower()
+    future = [x for x in all_words
+                if (x.date_published is None
+                or x.date_published > today)
+                and (search_term in x.word.lower()
                 or search_term in x.definition.lower()
-                or search_term in x.exampleSentence.lower()]
-    future = [x for x in words if x.date_published == None or x.date_published > today]
+                or search_term in x.exampleSentence.lower())]
     all_users = User.query.all()
     users = [y for y in all_users
                 if search_term in y.username.lower()
@@ -297,7 +303,6 @@ def admin_search(search_term):
     return render_template('admin.html'
                            , title='Admin'
                            , unpublished=future
-                           , words=words
                            , users=users
                            , form=form
                            , content_id=cid)
@@ -320,7 +325,10 @@ def new_word():
             dupe = Word.query.filter(Word.word == form.word.data
                                      and Word.partOfSpeech_id == form.part_o_speech.data).first()
             if dupe:
-                flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+                if dupe.date_published:
+                    flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+                else:
+                    flash(f'This word was added on {dupe.date_added.strftime("%Y-%m-%d")}, but is unpublished.', 'fail')
             else:
                 if current_user.is_authenticated:
                     user = current_user
@@ -335,7 +343,10 @@ def new_word():
                             , contributor=user)
                 db.session.add(word)
                 db.session.commit()
-                flash('Word added, you sot.', 'success')
+                if current_user.is_authenticated and current_user.isAdmin:
+                    flash('Word added, you sot.', 'success')
+                else:
+                    flash('Word added, awaiting review and scheduling by a site admin, who is slow...', 'success')
                 return redirect(url_for('home'))
     return render_template('word_upsert.html'
                            , title='Add Word'
@@ -421,54 +432,3 @@ def import_words():
                            , error_count=error_count)
 
 
-'''
-#may come back to add in commenting functions later on
-@app.route("/post/new", methods=['GET', 'POST'])
-@login_required
-def new_post():
-    form = PostForm()
-    if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
-        db.session.add(post)
-        db.session.commit()
-        flash('Post created, you sot.', 'success')
-        return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post', form=form, legend='Create Post', user=current_user)
-
-
-@app.route("/post/<int:post_id>")
-def post(post_id):
-    post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post)
-
-
-@app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
-@login_required
-def update_post(post_id):
-    post = Post.query.get_or_404(post_id)
-    if post.author != current_user:
-        abort(403)
-    form = PostForm()
-    if form.validate_on_submit():
-        post.title = form.title.data
-        post.content = form.content.data
-        db.session.commit()
-        flash('Post updated, you miscreant.', 'success')
-        return redirect(url_for('post', post_id=post.id))
-    elif request.method == 'GET':
-        form.title.data = post.title
-        form.content.data = post.content
-    return render_template('create_post.html', title='Update Post', form=form, legend='Update Post')
-
-
-@app.route("/delete_post/<int:post_id>/update", methods=['POST'])
-@login_required
-def delete_post(post_id):
-    post = Post.query.get_or_404(post_id)
-    if post.author != current_user:
-        abort(403)
-    db.session.delete(post)
-    db.session.commit()
-    flash('Your post has been deleted, the poor thing.', 'success')
-    return redirect(url_for('home'))
-'''
