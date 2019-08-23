@@ -4,7 +4,7 @@
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}">
             <div class="media-body">
                 <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ word.contributor.username }}</a>
+                  <a class="mr-2" href="{{ url_for('word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
                   {% if word.date_published %}
                     <small class="text-muted">{{ word.date_published.strftime('%Y-%m-%d') }}</small>
                   {% endif %}

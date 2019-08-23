@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h1>Brichford's Word of the Day</h1>
+                <h1>BrichWord of the Day</h1>
             </div>
             <div class="col-md-5">
                 <a href="{{ url_for('word_bank_random') }}">Random Word</a>
@@ -48,7 +48,7 @@
             <div class="media-body">
                 <div class="article-metadata">
                     {% if word.contributor %}
-                        <a class="mr-2" href="#">{{ word.contributor.username }}</a>
+                        <a class="mr-2" href="{{ url_for('word_bank_user', user_id = word.user_id ) }}">{{ word.contributor.username }}</a>
                     {% else %}
                         <p class="mr-2">Anonymous</p>
                     {% endif %}

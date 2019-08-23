@@ -34,7 +34,7 @@ def word_bank():
     else:
         words = Word.query.order_by(Word.date_published.desc()).limit(7)
         num = str(words.count())
-    return render_template('word_bank.html', words=words, form=form, words_number=num)
+    return render_template('word_bank.html', title='Word Bank', words=words, form=form, words_number=num)
 
 
 @app.route("/word_bank/search/<string:search_term>", methods=['GET', 'POST'])
@@ -42,7 +42,7 @@ def word_bank_search(search_term):
     form = SearchForm()
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
-    all_words = Word.query.all()
+    all_words = Word.query.order_by(Word.word).all()
     search_term = search_term.lower()
     words = [x for x in all_words
                 if (search_term in x.word.lower()
@@ -60,8 +60,10 @@ def word_bank_random():
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
         max = Word.query.count()
-        rand_int = random.randint(1, max + 1)
-        words = Word.query.filter_by(id=rand_int).all()
+        words = [Word()]
+        while words[0].date_published is None:
+            rand_int = random.randint(1, max + 1)
+            words = Word.query.filter_by(id=rand_int).all()
         num = '1'
     return render_template('word_bank.html', words=words, form=form, words_number=num)
 
@@ -72,7 +74,8 @@ def word_bank_user(user_id):
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
-        words = Word.query.filter_by(user_id=user_id).all()
+        all_words = Word.query.filter_by(user_id=user_id).order_by(Word.word).all()
+        words = [x for x in all_words if x.date_published is not None]
         num = str(len(words))
     return render_template('word_bank.html', words=words, form=form, words_number=num)
 
@@ -322,7 +325,10 @@ def new_word():
             dupe = Word.query.filter(Word.word == form.word.data
                                      and Word.partOfSpeech_id == form.part_o_speech.data).first()
             if dupe:
-                flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+                if dupe.date_published:
+                    flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+                else:
+                    flash(f'This word was added on {dupe.date_added.strftime("%Y-%m-%d")}, but is unpublished.', 'fail')
             else:
                 if current_user.is_authenticated:
                     user = current_user
@@ -337,7 +343,10 @@ def new_word():
                             , contributor=user)
                 db.session.add(word)
                 db.session.commit()
-                flash('Word added, you sot.', 'success')
+                if current_user.is_authenticated and current_user.isAdmin:
+                    flash('Word added, you sot.', 'success')
+                else:
+                    flash('Word added, awaiting review and scheduling by a site admin, who is slow...', 'success')
                 return redirect(url_for('home'))
     return render_template('word_upsert.html'
                            , title='Add Word'

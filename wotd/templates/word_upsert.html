@@ -40,16 +40,6 @@
                     </div>
                     <div class="row">
                         <div class="col-md-2 form-group form-inline">
-                            {{ form.date_published.label(class="form-control-label") }}
-                        </div>
-                        <div class="col-md-4 form-group form-inline">
-                            {% if user.isAdmin %}
-                                {{ form.date_published() }}
-                            {% else %}
-                                {{ form.date_published(disabled="disabled") }}
-                            {% endif %}
-                        </div>
-                        <div class="col-md-2 form-group form-inline">
                             {{ form.ipa.label(class="form-control-label") }}
                         </div>
                         <div class="col-md-4 form-group form-inline">
@@ -64,6 +54,14 @@
                                 {{ form.ipa() }}
                             {% endif %}
                         </div>
+                        {% if user.isAdmin %}
+                            <div class="col-md-2 form-group form-inline">
+                                {{ form.date_published.label(class="form-control-label") }}
+                            </div>
+                            <div class="col-md-4 form-group form-inline">
+                                {{ form.date_published() }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
 
