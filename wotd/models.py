@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
     # posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+        return "User('{}', '{}', '{}')".format(self.username, self.email, self.image_file)
 
 
 class PartOfSpeech(db.Model):
@@ -28,7 +28,7 @@ class PartOfSpeech(db.Model):
     words = db.relationship('Word', backref='part_o_speech', lazy=True)
 
     def __repr__(self):
-        return f"{self.partOfSpeech}"
+        return "{}".format(self.partOfSpeech)
 
 
 class Word(db.Model):
@@ -44,7 +44,7 @@ class Word(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
 
     def __repr__(self):
-        return f"Word('{self.word}', '{self.part_o_speech}', '{self.contributor}')"#", ''{self.date_published.strftime('%Y-%m-%d')}')"
+        return "Word('{}', '{}', '{}')".format(self.word, self.part_o_speech, self.contributor)
 
 
 class Content(db.Model):

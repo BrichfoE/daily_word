@@ -1,8 +1,7 @@
 import os
-import secrets
 import random
 from datetime import datetime
-from PIL import Image
+import image
 from flask import render_template, url_for, flash, redirect, request, abort
 from wotd import app, db, flask_bcrypt
 from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm, AdminAccountForm, FileForm, ContentForm
@@ -106,7 +105,7 @@ def content_new():
                     active.isActive = False
             db.session.add(new_content)
             db.session.commit()
-            flash(f'{new_content.title} added!  Content is King!  That or Gidorah is King.  Either Or.', 'success')
+            flash('{} added!  Content is King!  That or Gidorah is King.  Either Or.'.format(new_content.title), 'success')
             return redirect('admin')
     return render_template('content_upsert.html', title='Update Content', form=form)
 
@@ -148,7 +147,7 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash(f'Account created for {form.username.data}!  You can log in now', 'success')
+        flash('Account created for {}!  You can log in now'.format(form.username.data), 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -176,7 +175,7 @@ def logout():
 
 
 def save_file(form_file, folder_name):
-    random_hex = secrets.token_hex(8)
+    random_hex = random.token_hex(8)
     _, f_ext = os.path.splitext(form_file.filename)
     file_fn = random_hex + f_ext
     file_path = os.path.join(app.root_path, 'static', folder_name, file_fn)
@@ -186,13 +185,13 @@ def save_file(form_file, folder_name):
 
 
 def save_picture(form_file, folder_name):
-    random_hex = secrets.token_hex(8)
+    random_hex = random.token_hex(8)
     _, f_ext = os.path.splitext(form_file.filename)
     picture_fn = random_hex + f_ext
     picture_path = os.path.join(app.root_path, 'static', folder_name, picture_fn)
 
     output_size = (125, 125)
-    i = Image.open(form_file)
+    i = image.open(form_file)
     i.thumbnail(output_size)
     i.save(picture_path)
 
@@ -320,15 +319,15 @@ def new_word():
     form.get_parts_of_speech()
     if form.validate_on_submit():
         if form.part_o_speech.data == -1:
-            flash(f'Please choose a part of speech.', 'fail')
+            flash('Please choose a part of speech.', 'fail')
         else:
             dupe = Word.query.filter(Word.word == form.word.data
                                      and Word.partOfSpeech_id == form.part_o_speech.data).first()
             if dupe:
                 if dupe.date_published:
-                    flash(f'This word was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.', 'fail')
+                    flash('This word was added on {}, you cretin.'.format(dupe.date_published.strftime("%Y-%m-%d")), 'fail')
                 else:
-                    flash(f'This word was added on {dupe.date_added.strftime("%Y-%m-%d")}, but is unpublished.', 'fail')
+                    flash('This word was added on {}, but is unpublished.'.format(dupe.date_added.strftime("%Y-%m-%d")), 'fail')
             else:
                 if current_user.is_authenticated:
                     user = current_user
@@ -371,7 +370,8 @@ def update_word(word_id):
                                      , Word.word == form.word.data
                                      , Word.partOfSpeech_id == form.part_o_speech.data).first()
             if dupe:
-                flash(f'This word ({dupe.id}) was added on {dupe.date_published.strftime("%Y-%m-%d")}, you cretin.'
+                flash('This word ({}) was added on {}, you cretin.'
+                      .format(dupe.id, dupe.date_published.strftime("%Y-%m-%d"))
                       , 'fail')
             else:
                 word.word = form.word.data
@@ -384,7 +384,7 @@ def update_word(word_id):
                 flash('Word updated, you miscreant.', 'success')
                 return redirect(url_for('word', word_id=word.id))
     elif form.is_submitted() and form.validate() is False:
-        flash(f'this form failed', 'success')
+        flash('This form failed', 'success')
     elif request.method == 'GET':
         form.word.data = word.word
         form.part_o_speech.data = word.partOfSpeech_id
