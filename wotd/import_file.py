@@ -37,9 +37,9 @@ def import_file(upload_file):
                 addition_list.append(import_list[key]['word'])
                 db.session.add(newWord)
             except:
-                print(f'Issue loading {key}')
+                print('Issue loading {}'.format(key))
                 exception_list.append([key, error])
-    print(f'Adding {count} new words')
+    print('Adding {} new words'.format(count))
     db.session.commit()
     return addition_list, exception_list
 
