@@ -1,13 +1,24 @@
 import os
 import random
 from datetime import datetime
+from sqlalchemy import and_, or_
 import image
 from flask import render_template, url_for, flash, redirect, request, abort
-from wotd import app, db, flask_bcrypt
-from wotd.forms import RegistrationForm, LoginForm, UpdateAccountForm, WordForm, SearchForm, AdminAccountForm, FileForm, ContentForm
+from wotd import app, db, flask_bcrypt, mail
 from wotd.models import User, Word, Content
 from wotd.import_file import import_file
 from flask_login import login_user, current_user, logout_user, login_required
+from flask_mail import Message
+from wotd.forms import (RegistrationForm
+                        , LoginForm
+                        , UpdateAccountForm
+                        , WordForm
+                        , SearchForm
+                        , AdminAccountForm
+                        , FileForm
+                        , ContentForm
+                        , RequestResetForm
+                        , ResetPasswordForm)
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -31,8 +42,13 @@ def word_bank():
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
-        words = Word.query.order_by(Word.date_published.desc()).limit(7)
-        num = str(words.count())
+        today = datetime.date(datetime.now())
+        page = request.args.get('page', 1, type=int)
+        words = Word.query\
+            .filter(and_(Word.date_published is not None, Word.date_published <= today))\
+            .order_by(Word.date_published.desc())\
+            .paginate(per_page=7, page=page)
+        num = str(words.total)
     return render_template('word_bank.html', title='Word Bank', words=words, form=form, words_number=num)
 
 
@@ -41,30 +57,39 @@ def word_bank_search(search_term):
     form = SearchForm()
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
-    all_words = Word.query.order_by(Word.word).all()
-    search_term = search_term.lower()
-    words = [x for x in all_words
-                if (search_term in x.word.lower()
-                or search_term in x.definition.lower()
-                or search_term in x.exampleSentence.lower())
-                and x.date_published is not None]
-    num = str(len(words))
-    return render_template('word_bank.html', words=words, form=form, words_number=num)
-
-
-@app.route("/word_bank/random")
-def word_bank_random():
-    form = SearchForm()
-    if form.validate_on_submit and form.search_data.data is not None:
-        return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
-        max = Word.query.count()
-        words = [Word()]
-        while words[0].date_published is None:
-            rand_int = random.randint(1, max + 1)
-            words = Word.query.filter_by(id=rand_int).all()
-        num = '1'
+        today = datetime.date(datetime.now())
+        search_term = '%' + search_term.lower() + '%'
+        page = request.args.get('page', 1, type=int)
+        words = Word.query\
+                    .filter(
+                        and_(
+                            Word.date_published is not None, Word.date_published <= today, or_(
+                                (Word.word.ilike(search_term))
+                                , (Word.definition.ilike(search_term))
+                                , (Word.exampleSentence.ilike(search_term))
+                            )
+                        )
+                    )\
+            .order_by(Word.date_published.desc())\
+            .paginate(per_page=7, page=page)
+        num = str(words.total)
     return render_template('word_bank.html', words=words, form=form, words_number=num)
+
+
+@app.route("/word/random")
+def word_random():
+    max = Word.query.count()
+    rand_int = random.randint(1, max + 1)
+    word = Word.query.filter(
+        and_(
+            Word.id > rand_int
+            , Word.date_published != None
+        )
+    ).first()
+    if word is None:
+        return redirect(url_for('word_random'))
+    return redirect(url_for('word', word_id=word.id))
 
 
 @app.route("/word_bank/user/<int:user_id>")
@@ -73,9 +98,18 @@ def word_bank_user(user_id):
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('word_bank_search', search_term=form.search_data.data))
     else:
-        all_words = Word.query.filter_by(user_id=user_id).order_by(Word.word).all()
-        words = [x for x in all_words if x.date_published is not None]
-        num = str(len(words))
+        page = request.args.get('page', 1, type=int)
+        today = datetime.date(datetime.now())
+        words = Word.query.filter(
+            and_(
+                Word.user_id == user_id
+                , or_(
+                    Word.date_published != None
+                    , Word.date_published > today
+                )
+            )
+        ).order_by(Word.word).paginate(per_page=7, page=page)
+        num = str(words.total)
     return render_template('word_bank.html', words=words, form=form, words_number=num)
 
 
@@ -263,9 +297,17 @@ def admin():
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('admin_search', search_term=form.search_data.data))
     today = datetime.date(datetime.now())
-    all_words = Word.query.order_by(Word.date_published.desc()).all()
-    future = [x for x in all_words if x.date_published == None or x.date_published > today]
-    users = User.query.all()
+    word_page = request.args.get('page', 1, type=int)
+    future = Word.query \
+        .filter(
+            or_(
+                Word.date_published == None
+                , Word.date_published > today
+            )
+        ) \
+        .paginate(per_page=5, page=word_page)
+    user_page = request.args.get('page', 1, type=int)
+    users = User.query.paginate(per_page=5, page=user_page)
     return render_template('admin.html'
                            , title='Admin'
                            , unpublished=future
@@ -286,19 +328,28 @@ def admin_search(search_term):
     form = SearchForm()
     if form.validate_on_submit and form.search_data.data is not None:
         return redirect(url_for('admin_search', search_term=form.search_data.data))
-    search_term = search_term.lower()
     today = datetime.date(datetime.now())
-    all_words = Word.query.all()
-    future = [x for x in all_words
-                if (x.date_published is None
-                or x.date_published > today)
-                and (search_term in x.word.lower()
-                or search_term in x.definition.lower()
-                or search_term in x.exampleSentence.lower())]
-    all_users = User.query.all()
-    users = [y for y in all_users
-                if search_term in y.username.lower()
-                or search_term in y.email.lower()]
+    search_term = '%' + search_term.lower() + '%'
+    word_page = request.args.get('page', 1, type=int)
+    future = Word.query \
+        .filter(
+            and_(
+                    or_(
+                        Word.date_published == None
+                        , Word.date_published > today
+                    )
+                    , or_(
+                        (Word.word.ilike(search_term))
+                        , (Word.definition.ilike(search_term))
+                        , (Word.exampleSentence.ilike(search_term))
+                )
+            )
+        ) \
+        .paginate(per_page=5, page=word_page)
+    user_page = request.args.get('page', 1, type=int)
+    users = User.query\
+        .filter(or_((User.username.ilike(search_term)), (User.email.ilike(search_term))))\
+        .paginate(per_page=5, page=user_page)
     return render_template('admin.html'
                            , title='Admin'
                            , unpublished=future
@@ -432,3 +483,44 @@ def import_words():
                            , error_count=error_count)
 
 
+def send_reset_email(user):
+    token = user.get_reset_token()
+    msg = Message('Brichword - Password Reset Request'
+                  , sender='brichword@gmail.com'
+                  , recipients=[user.email])
+    msg.body = '''To reset your password, visit this link:
+{}    
+If you did not make this request, then simply ignore this email.
+'''.format(url_for('reset_token', token=token, _external=True))
+    mail.send(msg)
+
+
+@app.route("/reset_request", methods=['GET', 'POST'])
+def reset_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = RequestResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        send_reset_email(user)
+        flash('An email has been sent with instructions to reset your password.', 'info')
+        return redirect(url_for('login'))
+    return render_template('reset_request.html', title='Reset Password', form=form)
+
+
+@app.route("/reset_request/<token>", methods=['GET', 'POST'])
+def reset_token(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    user = User.verify_reset_token(token)
+    if user is None:
+        flash('That is an invalid or expired token', 'warning')
+        return redirect(url_for('reset_request'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        hashed_password = flask_bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user.password = hashed_password
+        db.session.commit()
+        flash('Password updated for {}!  You can log in now'.format(form.username.data), 'success')
+        return redirect(url_for('login'))
+    return render_template('reset_token.html', title='Reset Password', form=form)

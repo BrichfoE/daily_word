@@ -11,7 +11,7 @@
                 {% endif %}
             </div>
             <div class="col-md-5">
-                    <a href="{{ url_for('word_bank_random') }}">Random Word</a>
+                    <a href="{{ url_for('word_random') }}">Random Word</a>
                     <a href="{{ url_for('word_bank') }}"> | Last 7 Words</a>
                     <a href="{{ url_for('word_bank_search', search_term=' ') }}"> | All Words</a>
             </div>
@@ -62,7 +62,7 @@
             <th><h5 class="article-header">Example Sentence</h5></th>
             <th><h5 class="article-header">Contributor</h5></th>
         </tr>
-    {% for word in words %}
+    {% for word in words.items %}
         <tr class="tr">
             <!--<img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}"> -->
             <th>
@@ -97,4 +97,15 @@
         </tr>
     {% endfor %}
     </table>
+    {% for page_num in words.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=3) %}
+        {% if page_num %}
+            {% if words.page == page_num %}
+                <a class="btn btn-info mb-4" href="{{ url_for('word_bank', page=page_num) }}">{{ page_num }}</a>
+            {% else %}
+                <a class="btn btn-outline-info mb-4" href="{{ url_for('word_bank', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
 {% endblock content %}

@@ -1,6 +1,7 @@
 from datetime import datetime
-from wotd import db, login_manager
+from wotd import db, login_manager, app
 from flask_login import UserMixin
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 @login_manager.user_loader
@@ -18,6 +19,20 @@ class User(db.Model, UserMixin):
     words = db.relationship('Word', backref='contributor', lazy=True)
     # posts = db.relationship('Post', backref='author', lazy=True)
 
+    def get_reset_token(self, expires_sec=1800):
+        s = Serializer(app.config['SECRET_KEY'], expires_sec)
+        return s.dumps({'user_id': self.id}).decode('utf-8')
+
+
+    @staticmethod
+    def verify_reset_token(token):
+        s = Serializer(app.config['SECRET_KEY'])
+        try:
+            user_id = s.loads(token)['user_id']
+        except:
+            return None
+        return User.query.get(user_id)
+
     def __repr__(self):
         return "User('{}', '{}', '{}')".format(self.username, self.email, self.image_file)
 
@@ -34,7 +49,6 @@ class PartOfSpeech(db.Model):
 class Word(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     word = db.Column(db.String(100), nullable=False)
-    #part_o_speech = db.Column(db.String(100), nullable=False)
     partOfSpeech_id = db.Column(db.Integer, db.ForeignKey('part_of_speech.id'), nullable=False)
     definition = db.Column(db.Text, nullable=False)
     exampleSentence = db.Column(db.Text, nullable=False)
