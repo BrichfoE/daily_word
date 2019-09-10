@@ -2,7 +2,7 @@ from flask import Flask
 from flask_bcrypt import Bcrypt
 from wotd import db
 from wotd.models import User, PartOfSpeech, Content
-from wotd.import_file import import_file
+from wotd.admin.import_file import import_file
 
 app = Flask(__name__)
 flask_bcrypt = Bcrypt(app)
@@ -18,7 +18,7 @@ parts = [PartOfSpeech(id=1, partOfSpeech='noun')
 
 password = 'admin_init'
 hashed_password = flask_bcrypt.generate_password_hash(password).decode('utf-8')
-user = User(username="Admin"
+user = User(username="admins"
             , email="ebrichford@gmail.com"
             , password=hashed_password
             , isAdmin=True)

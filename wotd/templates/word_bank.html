@@ -11,9 +11,9 @@
                 {% endif %}
             </div>
             <div class="col-md-5">
-                    <a href="{{ url_for('word_random') }}">Random Word</a>
-                    <a href="{{ url_for('word_bank') }}"> | Last 7 Words</a>
-                    <a href="{{ url_for('word_bank_search', search_term=' ') }}"> | All Words</a>
+                    <a href="{{ url_for('words.word_random') }}">Random Word</a>
+                    <a href="{{ url_for('words.word_bank') }}"> | Last 7 Words</a>
+                    <a href="{{ url_for('words.word_bank_search', search_term=' ') }}"> | All Words</a>
             </div>
         </div>
         <div class="row">
@@ -66,7 +66,7 @@
         <tr class="tr">
             <!--<img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}"> -->
             <th>
-                <b><a class="article-content" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></b>
+                <b><a class="article-content" href="{{ url_for('words.word', word_id = word.id) }}">{{ word.word }}</a></b>
             </th>
             <th>
                 <small>{{ word.date_published }}</small>
@@ -89,7 +89,7 @@
             </th>
             <th>
                 {% if word.contributor %}
-                    <a href="{{ url_for('word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
+                    <a href="{{ url_for('words.word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
                 {% else %}
                     <p>Anonymous</p>
                 {% endif %}
@@ -100,9 +100,9 @@
     {% for page_num in words.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=3) %}
         {% if page_num %}
             {% if words.page == page_num %}
-                <a class="btn btn-info mb-4" href="{{ url_for('word_bank', page=page_num) }}">{{ page_num }}</a>
+                <a class="btn btn-info mb-4" href="{{ url_for('words.word_bank', page=page_num) }}">{{ page_num }}</a>
             {% else %}
-                <a class="btn btn-outline-info mb-4" href="{{ url_for('word_bank', page=page_num) }}">{{ page_num }}</a>
+                <a class="btn btn-outline-info mb-4" href="{{ url_for('words.word_bank', page=page_num) }}">{{ page_num }}</a>
             {% endif %}
         {% else %}
             ...

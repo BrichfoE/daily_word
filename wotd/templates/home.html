@@ -6,9 +6,9 @@
                 <h1>BrichWord of the Day</h1>
             </div>
             <div class="col-md-5">
-                <a href="{{ url_for('word_random') }}">Random Word</a>
-                <a href="{{ url_for('word_bank') }}"> | Last 7 Words</a>
-                <a href="{{ url_for('word_bank_search', search_term=' ') }}"> | All Words</a>
+                <a href="{{ url_for('words.word_random') }}">Random Word</a>
+                <a href="{{ url_for('words.word_bank') }}"> | Last 7 Words</a>
+                <a href="{{ url_for('words.word_bank_search', search_term=' ') }}"> | All Words</a>
             </div>
         </div>
         <div class="row">
@@ -48,13 +48,13 @@
             <div class="media-body">
                 <div class="article-metadata">
                     {% if word.contributor %}
-                        <a class="mr-2" href="{{ url_for('word_bank_user', user_id = word.user_id ) }}">{{ word.contributor.username }}</a>
+                        <a class="mr-2" href="{{ url_for('words.word_bank_user', user_id = word.user_id ) }}">{{ word.contributor.username }}</a>
                     {% else %}
                         <p class="mr-2">Anonymous</p>
                     {% endif %}
                     <small class="text-muted">{{ word.date_published }}</small>
                 </div>
-                <h2><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></h2>
+                <h2><a class="article-title" href="{{ url_for('words.word', word_id = word.id) }}">{{ word.word }}</a></h2>
                 <div class="container">
                     <div class="row article-metadata">
                         <div class="col-md-6">

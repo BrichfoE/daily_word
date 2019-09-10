@@ -4,13 +4,13 @@
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + word.contributor.image_file) }}">
             <div class="media-body">
                 <div class="article-metadata">
-                  <a class="mr-2" href="{{ url_for('word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
+                  <a class="mr-2" href="{{ url_for('words.word_bank_user', user_id=word.user_id) }}">{{ word.contributor.username }}</a>
                   {% if word.date_published %}
                     <small class="text-muted">{{ word.date_published.strftime('%Y-%m-%d') }}</small>
                   {% endif %}
                     {% if word.contributor == current_user or current_user.isAdmin %}
                     <div>
-                        <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('update_word', word_id=word.id) }}">Update</a>
+                        <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('words.update_word', word_id=word.id) }}">Update</a>
                         <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
                     </div>
                     {% endif %}
@@ -52,7 +52,7 @@
               </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <form action="{{ url_for('delete_word', word_id=word.id) }}" method="word">
+               <form action="{{ url_for('words.delete_word', word_id=word.id) }}" method="word">
                    <input class="btn btn-danger" type="submit" value="Delete">
                </form>
              </div>

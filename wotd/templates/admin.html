@@ -6,13 +6,13 @@
                 <h1>Search</h1>
             </div>
             <div class="col-md-4">
-                <a href="{{ url_for('content_new') }}">New Content</a>
+                <a href="{{ url_for('admins.content_new') }}">New Content</a>
                 {% if content_id != 0 %}
                 <a> | </a>
-                <a href="{{ url_for('content_update', content_id=content_id) }}">Active Content</a>
+                <a href="{{ url_for('admins.content_update', content_id=content_id) }}">Active Content</a>
                 {% endif %}
                 <a> | </a>
-                <a href="{{ url_for('import_words') }}">Upload Words</a>
+                <a href="{{ url_for('admins.import_words') }}">Upload Words</a>
             </div>
         </div>
         <div class="row">
@@ -60,7 +60,7 @@
                             <b><a class="article-content">{{ word.id }}</a></b>
                         </th>
                         <th>
-                            <b><a class="article-title" href="{{ url_for('word', word_id = word.id) }}">{{ word.word }}</a></b>
+                            <b><a class="article-title" href="{{ url_for('words.word', word_id = word.id) }}">{{ word.word }}</a></b>
                         </th>
                         <th>
                             <p class="text-content">{{ word.date_published }}</p>
@@ -69,7 +69,7 @@
                             <p class="article-content">{{ word.part_o_speech.partOfSpeech }}</p>
                         </th>
                         <th>
-                            <a class="mr-2" href="{{ url_for('word_bank_user', user_id = word.contributor.id) }}">{{ word.contributor.username }}</a>
+                            <a class="mr-2" href="{{ url_for('words.word_bank_user', user_id = word.contributor.id) }}">{{ word.contributor.username }}</a>
                         </th>
                     </tr>
                 {% endfor %}
@@ -77,9 +77,9 @@
                 {% for page_num in unpublished.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                     {% if page_num %}
                         {% if unpublished.page == page_num %}
-                            <a class="btn btn-info mb-4" href="{{ url_for('admin', word_page=page_num) }}">{{ page_num }}</a>
+                            <a class="btn btn-info mb-4" href="{{ url_for('admins.admin', word_page=page_num) }}">{{ page_num }}</a>
                         {% else %}
-                            <a class="btn btn-outline-info mb-4" href="{{ url_for('admin', word_page=page_num) }}">{{ page_num }}</a>
+                            <a class="btn btn-outline-info mb-4" href="{{ url_for('admins.admin', word_page=page_num) }}">{{ page_num }}</a>
                         {% endif %}
                     {% else %}
                         ...
@@ -102,7 +102,7 @@
                             <b><a class="article-content">{{ user.id }}</a></b>
                         </th>
                         <th>
-                            <b><a class="article-title" href="{{ url_for('account_admin', user_id = user.id) }}">{{ user.username }}</a></b>
+                            <b><a class="article-title" href="{{ url_for('users.account_admin', user_id = user.id) }}">{{ user.username }}</a></b>
                         </th>
                         <th>
                             <p class="text-content">{{ user.email }}</p>
@@ -119,9 +119,9 @@
                 {% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                     {% if page_num %}
                         {% if users.page == page_num %}
-                            <a class="btn btn-info mb-4" href="{{ url_for('admin', user_page=page_num) }}">{{ page_num }}</a>
+                            <a class="btn btn-info mb-4" href="{{ url_for('admins.admin', user_page=page_num) }}">{{ page_num }}</a>
                         {% else %}
-                            <a class="btn btn-outline-info mb-4" href="{{ url_for('admin', user_page=page_num) }}">{{ page_num }}</a>
+                            <a class="btn btn-outline-info mb-4" href="{{ url_for('admins.admin', user_page=page_num) }}">{{ page_num }}</a>
                         {% endif %}
                     {% else %}
                         ...
