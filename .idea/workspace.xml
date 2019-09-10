@@ -5,15 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a675e95-8200-47e6-92bb-2203b8552cf2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/wotd/templates/reset_request.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wotd/templates/reset_token.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/admin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/admin/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/admin/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/admin/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/main/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/main/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/main/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/users/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/users/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/words/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/words/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wotd/words/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/building/db_rebuild.py" beforeDir="false" afterPath="$PROJECT_DIR$/building/db_rebuild.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wotd/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wotd/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/_toBeDeleted_dbSetup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/import_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/admin/import_file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wotd/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wotd/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/routes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/site.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wotd/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/word.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/word.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wotd/templates/word_bank.html" beforeDir="false" afterPath="$PROJECT_DIR$/wotd/templates/word_bank.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,62 +46,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wotd/routes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="488" column="37" selection-start-line="488" selection-start-column="37" selection-end-line="488" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wotd/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wotd/templates/reset_request.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wotd/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wotd/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -86,32 +61,83 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wotd/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wotd/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="510">
+              <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wotd/import_file.py">
+        <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wotd/users/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wotd/admin/routes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="44" column="2" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wotd/admin/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wotd/templates/layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wotd/templates/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1955">
+              <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wotd/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -121,32 +147,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;/admin</find>
-      <find>&quot;/word</find>
-      <find>&quot;/upload</find>
-      <find>upload</find>
-      <find>save_file</find>
-      <find>save_picture</find>
-      <find>delete</find>
-      <find>content/u</find>
-      <find>about</find>
-      <find>bottom</find>
-      <find>border</find>
-      <find>/admin</find>
-      <find>form</find>
-      <find>word_bank</find>
-      <find>#</find>
-      <find>word_bank_user</find>
-      <find>order</find>
-      <find>count</find>
-      <find>or_</find>
       <find>search_term</find>
       <find>admin/search</find>
       <find>word_bank/us</find>
@@ -158,6 +165,25 @@
       <find>register</find>
       <find>os.</find>
       <find>reset_request</find>
+      <find>url_for(</find>
+      <find>users.</find>
+      <find>url_For</find>
+      <find>url_for</find>
+      <find>save_file</find>
+      <find>save_</find>
+      <find>string</find>
+      <find>str</find>
+      <find>admin_search</find>
+      <find>/admin&quot;</find>
+      <find>exampleSentence</find>
+      <find>admin</find>
+      <find>admin(</find>
+      <find>@admin.route(</find>
+      <find>@admin.route(&quot;/</find>
+      <find>account/</find>
+      <find>admins</find>
+      <find>admins.html</find>
+      <find>app</find>
     </findStrings>
     <replaceStrings>
       <replace>word.contributor</replace>
@@ -171,9 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wotd/wotd.py" />
-        <option value="$PROJECT_DIR$/wotd/run.py" />
-        <option value="$PROJECT_DIR$/wotd/dbSetup.py" />
         <option value="$PROJECT_DIR$/importScript.py" />
         <option value="$PROJECT_DIR$/import/importScript.py" />
         <option value="$PROJECT_DIR$/import/import_file.py" />
@@ -186,35 +209,59 @@
         <option value="$PROJECT_DIR$/wotd/templates/about.html" />
         <option value="$PROJECT_DIR$/wotd/routes/word_routes.py" />
         <option value="$PROJECT_DIR$/wotd/static/main.css" />
-        <option value="$PROJECT_DIR$/wotd/templates/word.html" />
-        <option value="$PROJECT_DIR$/wotd/templates/home.html" />
         <option value="$PROJECT_DIR$/wotd/templates/word_upsert.html" />
-        <option value="$PROJECT_DIR$/wotd/templates/layout.html" />
         <option value="$PROJECT_DIR$/wotd/import_file.py" />
-        <option value="$PROJECT_DIR$/wotd/templates/word_bank.html" />
-        <option value="$PROJECT_DIR$/wotd/templates/admin.html" />
-        <option value="$PROJECT_DIR$/wotd/models.py" />
-        <option value="$PROJECT_DIR$/wotd/forms.py" />
         <option value="$PROJECT_DIR$/wotd/templates/reset_password.html" />
         <option value="$PROJECT_DIR$/wotd/templates/reset_token.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/wotd/Users/__init__.py" />
+        <option value="$PROJECT_DIR$/wotd/Users/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/Words/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/Main/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/Admin/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/Users/utils.py" />
+        <option value="$PROJECT_DIR$/wotd/Admin/utils.py" />
+        <option value="$PROJECT_DIR$/wotd/Words/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/Admin/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/Main/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/templates/home.html" />
         <option value="$PROJECT_DIR$/wotd/templates/login.html" />
-        <option value="$PROJECT_DIR$/wotd/__init__.py" />
+        <option value="$PROJECT_DIR$/wotd/templates/register.html" />
+        <option value="$PROJECT_DIR$/wotd/templates/word.html" />
+        <option value="$PROJECT_DIR$/wotd/templates/word_bank.html" />
+        <option value="$PROJECT_DIR$/wotd/Users/routes.py" />
         <option value="$PROJECT_DIR$/wotd/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/words/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/main/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/main/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/words/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/users/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/admin/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/users/forms.py" />
+        <option value="$PROJECT_DIR$/wotd/templates/layout.html" />
+        <option value="$PROJECT_DIR$/wotd/admin/routes.py" />
+        <option value="$PROJECT_DIR$/wotd/templates/admin.html" />
+        <option value="$PROJECT_DIR$/wotd/config.py" />
+        <option value="$PROJECT_DIR$/wotd/__init__.py" />
+        <option value="$PROJECT_DIR$/wotd/users/utils.py" />
+        <option value="$PROJECT_DIR$/wotd/models.py" />
+        <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/wotd/admin/utils.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="932" />
-    <option name="width" value="995" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,12 +283,19 @@
               <item name="daily_word" type="b2602c69:ProjectViewProjectNode" />
               <item name="daily_word" type="462c0819:PsiDirectoryNode" />
               <item name="wotd" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="daily_word" type="b2602c69:ProjectViewProjectNode" />
+              <item name="daily_word" type="462c0819:PsiDirectoryNode" />
+              <item name="wotd" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,15 +305,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\daily_word\wotd\Main" />
+      <recent name="C:\git\daily_word\wotd\Admin" />
+      <recent name="C:\git\daily_word\wotd\Words" />
+      <recent name="C:\git\daily_word\wotd\Users" />
       <recent name="C:\git\WotD\wotd" />
-      <recent name="C:\git\WotD\wotd\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\git\daily_word\wotd\admin" />
       <recent name="C:\git\daily_word\wotd" />
       <recent name="C:\git\daily_word\import" />
       <recent name="C:\git\WotD\wotd" />
       <recent name="C:\git\WotD\import" />
-      <recent name="C:\git\wotd\wotd" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -325,13 +382,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="746" y="0" width="796" height="831" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15532055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20026438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32719547" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -345,25 +403,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15532055" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wotd/run.py" />
@@ -375,20 +414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/create_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -413,50 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/building/db_rebuild.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" selection-start-line="25" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/_toBeDeleted_dbSetup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="71" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/content_upsert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="77" column="22" lean-forward="true" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wotd/routes/word_routes.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -465,28 +446,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/word.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py" />
-    <entry file="file://$PROJECT_DIR$/wotd/templates/word_upsert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wotd/static/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
@@ -494,57 +454,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="100" selection-start-line="81" selection-start-column="100" selection-end-line="81" selection-end-column="100" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/wotd/words/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/word_bank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/wotd/main/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/reset_token.html">
+    <entry file="file://$PROJECT_DIR$/wotd/admin/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/admin/import_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wotd/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.py">
+    <entry file="file://$PROJECT_DIR$/wotd/templates/account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="131">
+          <caret line="55" column="39" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/routes.py">
+    <entry file="file://$PROJECT_DIR$/wotd/templates/content_upsert.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="488" column="37" selection-start-line="488" selection-start-column="37" selection-end-line="488" selection-end-column="37" />
+        <state relative-caret-position="324">
+          <caret line="77" column="22" lean-forward="true" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/create_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="43" column="71" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/post.html" />
+    <entry file="file://$PROJECT_DIR$/wotd/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="48" column="61" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/building/db_rebuild.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="28" selection-end-column="36" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/__init__.py">
+    <entry file="file://$PROJECT_DIR$/wotd/_toBeDeleted_dbSetup.py" />
+    <entry file="file://$PROJECT_DIR$/wotd/templates/word_upsert.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="68">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/word_bank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="66" column="71" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/word.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/reset_token.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/reset_request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="67" column="69" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/forms.py" />
+    <entry file="file://$PROJECT_DIR$/wotd/routes.py" />
+    <entry file="file://$PROJECT_DIR$/wotd/users/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/main/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/words/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/words/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/main/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -556,50 +624,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/reset_request.html">
+    <entry file="file://$PROJECT_DIR$/wotd/users/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="437">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/login.html">
+    <entry file="file://$PROJECT_DIR$/wotd/users/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+        <state relative-caret-position="187">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/models.py">
+    <entry file="file://$PROJECT_DIR$/wotd/admin/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wotd/import_file.py">
+    <entry file="file://$PROJECT_DIR$/wotd/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+        <state relative-caret-position="714">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/users/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/admin/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="44" column="2" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wotd/admin/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
